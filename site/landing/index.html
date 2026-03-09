@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send Money to Mexico | Pangea Money Transfer</title>
+  <meta name="description" content="Send money to Mexico fast, secure, and with $0 fees. Bank deposit, cash pickup, or debit card delivery. Download the Pangea app today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================================
+       PANGEA SEND MONEY TO MEXICO — Landing Page
+       Redesigned in Pangea Brand Guide 2026 visual language
+       ========================================================== */
+
+    /* --- Design Tokens --- */
+    :root {
+      /* Colors — Primary */
+      --cyan: #00D4FF;
+      --blue: #0099E5;
+      --deep-blue: #0066CC;
+      --navy: #002B49;
+      --midnight: #0A1E3D;
+
+      /* Colors — Neutrals */
+      --cream: #F5F0EB;
+      --white: #FFFFFF;
+      --gray: #6B7280;
+      --gray-light: #D1CDC8;
+
+      /* Colors — Accents */
+      --green: #34C759;
+      --gold: #F5A623;
+      --coral: #FF6B5C;
+
+      /* Gradients */
+      --gradient-hero: linear-gradient(135deg, #00D4FF 0%, #0099E5 50%, #0066CC 100%);
+      --gradient-button: linear-gradient(135deg, #00D4FF, #0099E5);
+      --gradient-dark: linear-gradient(180deg, #002B49 0%, #0A1E3D 100%);
+
+      /* Halftone texture overlay */
+      --halftone: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+      --halftone-size: 6px 6px;
+
+      /* Typography */
+      --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+      /* Spacing */
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 48px;
+      --space-xl: 80px;
+      --space-2xl: 120px;
+
+      /* Radius */
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+
+      /* Shadows */
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-elevated: 0 8px 40px rgba(0,0,0,0.12);
+      --shadow-notification: 0 2px 12px rgba(0,0,0,0.1);
+
+      /* Motion */
+      --ease-micro: 200ms ease-out;
+      --ease-transition: 350ms cubic-bezier(0.25, 0.1, 0.25, 1);
+      --ease-entrance: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* --- Reset --- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 16px;
+    }
+    body {
+      font-family: var(--font);
+      color: var(--navy);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+    ul { list-style: none; }
+
+    /* --- Utility --- */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    /* --- Back Bar --- */
+    .back-bar {
+      background: var(--midnight);
+      padding: 8px var(--space-md);
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    .back-bar a {
+      color: var(--cyan);
+      font-weight: 600;
+      transition: color var(--ease-micro);
+    }
+    .back-bar a:hover { color: var(--white); }
+
+    /* --- Header / Nav --- */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: -0.01em;
+    }
+    .logo .psi {
+      color: var(--cyan);
+      font-size: 26px;
+      font-weight: 900;
+    }
+    .nav { display: flex; align-items: center; gap: 32px; }
+    .nav a {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      transition: color var(--ease-micro);
+    }
+    .nav a:hover { color: var(--blue); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 16px;
+      transition: transform var(--ease-micro), box-shadow var(--ease-micro);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover { transform: scale(1.03); }
+    .btn-primary {
+      background: var(--gradient-button);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(0,212,255,0.3);
+    }
+    .btn-primary:hover { box-shadow: 0 6px 24px rgba(0,212,255,0.4); }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 2px solid var(--gray-light);
+    }
+    .btn-secondary:hover { border-color: var(--cyan); }
+    .btn-ghost {
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.5);
+    }
+    .btn-sm { padding: 10px 20px; font-size: 14px; }
+    .btn-lg { padding: 16px 32px; font-size: 18px; }
+
+    .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+    .mobile-menu-btn span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: transform var(--ease-micro); }
+
+    /* --- Gradient Section Base --- */
+    .section-gradient {
+      position: relative;
+      background: var(--gradient-hero);
+    }
+    .section-gradient::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--halftone);
+      background-size: var(--halftone-size);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .section-gradient > * { position: relative; z-index: 2; }
+
+    /* --- Hero --- */
+    .hero {
+      padding: var(--space-xl) 0 var(--space-2xl);
+      overflow: visible;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+    .hero-text { max-width: 560px; }
+    /* CRITICAL: Hero text on gradients is DARK NAVY, NOT white */
+    .hero-title {
+      font-weight: 900;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin-bottom: var(--space-md);
+    }
+    .hero-subtitle {
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.5;
+      color: var(--navy);
+      opacity: 0.8;
+      margin-bottom: var(--space-lg);
+      max-width: 460px;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: var(--space-md);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: rgba(0,43,73,0.1);
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .hero-badge svg { width: 16px; height: 16px; }
+
+    /* --- Calculator Card --- */
+    .calc-wrapper { position: relative; }
+    .calc-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      box-shadow: var(--shadow-elevated);
+      max-width: 420px;
+      margin-left: auto;
+    }
+    .calc-card h3 {
+      font-weight: 800;
+      font-size: 20px;
+      margin-bottom: var(--space-md);
+      color: var(--navy);
+    }
+    .calc-field {
+      margin-bottom: var(--space-sm);
+    }
+    .calc-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .calc-input-wrapper {
+      display: flex;
+      align-items: center;
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      border: 2px solid transparent;
+      transition: border-color var(--ease-micro);
+    }
+    .calc-input-wrapper:focus-within {
+      border-color: var(--cyan);
+      background: var(--white);
+    }
+    .calc-currency-flag {
+      font-size: 22px;
+      margin-right: 10px;
+      line-height: 1;
+    }
+    .calc-input {
+      flex: 1;
+      border: none;
+      background: none;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy);
+      outline: none;
+      font-family: var(--font);
+      min-width: 0;
+    }
+    .calc-input::placeholder { color: var(--gray-light); }
+    .calc-currency-code {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gray);
+      margin-left: 8px;
+    }
+    .calc-rate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 0;
+      gap: 8px;
+    }
+    .calc-rate-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--gradient-button);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 16px;
+    }
+    .calc-rate-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray);
+    }
+    .calc-rate-value {
+      color: var(--navy);
+      font-weight: 800;
+    }
+    .calc-receive {
+      background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(0,153,229,0.08));
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+    }
+    .calc-receive-amount {
+      flex: 1;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .calc-fee {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      font-size: 14px;
+    }
+    .calc-fee-label { color: var(--gray); font-weight: 500; }
+    .calc-fee-value {
+      font-weight: 700;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .calc-fee-badge {
+      background: rgba(52,199,89,0.12);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .calc-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--gradient-button);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-md);
+      font-weight: 800;
+      font-size: 17px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform var(--ease-micro), box-shadow var(--ease-micro);
+      box-shadow: 0 4px 16px rgba(0,212,255,0.3);
+      margin-top: var(--space-sm);
+    }
+    .calc-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,212,255,0.4);
+    }
+
+    /* --- Floating Stickers --- */
+    .sticker {
+      position: absolute;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      box-shadow: var(--shadow-notification);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      z-index: 10;
+      animation: float 4s ease-in-out infinite;
+      color: var(--navy);
+    }
+    .sticker-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .sticker-dot--green { background: var(--green); }
+    .sticker-dot--cyan { background: var(--cyan); }
+    .sticker-dot--gold { background: var(--gold); }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(var(--sticker-rotate, 0deg)); }
+      50% { transform: translateY(-12px) rotate(var(--sticker-rotate, 0deg)); }
+    }
+
+    /* --- Section Styling --- */
+    .section-cream {
+      background: var(--cream);
+      padding: var(--space-xl) 0;
+    }
+    .section-heading {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+    .section-overline {
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: var(--space-xs);
+    }
+    .section-title {
+      font-weight: 900;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+    .section-subtitle {
+      font-size: 18px;
+      color: var(--gray);
+      margin-top: var(--space-sm);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* --- How It Works --- */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+    .step-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      transition: transform var(--ease-transition), box-shadow var(--ease-transition);
+    }
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-elevated);
+    }
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gradient-button);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 24px;
+      margin: 0 auto var(--space-md);
+      box-shadow: 0 4px 16px rgba(0,212,255,0.25);
+    }
+    .step-title {
+      font-weight: 800;
+      font-size: 20px;
+      margin-bottom: var(--space-xs);
+      color: var(--navy);
+    }
+    .step-desc {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+    .step-icon {
+      font-size: 36px;
+      margin-bottom: var(--space-sm);
+    }
+
+    /* --- Delivery Methods --- */
+    .delivery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+    .delivery-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      transition: transform var(--ease-transition), box-shadow var(--ease-transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .delivery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-elevated);
+    }
+    .delivery-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-button);
+      opacity: 0;
+      transition: opacity var(--ease-micro);
+    }
+    .delivery-card:hover::after { opacity: 1; }
+    .delivery-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(0,153,229,0.1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-md);
+      font-size: 28px;
+    }
+    .delivery-title {
+      font-weight: 800;
+      font-size: 19px;
+      color: var(--navy);
+      margin-bottom: var(--space-xs);
+    }
+    .delivery-desc {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+    .delivery-tag {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .delivery-tag--fast { background: rgba(52,199,89,0.12); color: var(--green); }
+    .delivery-tag--popular { background: rgba(0,212,255,0.12); color: var(--blue); }
+
+    /* --- Trust / Stats Section --- */
+    .trust-section {
+      padding: var(--space-xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .trust-title {
+      font-weight: 900;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+      text-align: center;
+    }
+    .stat-card {
+      padding: var(--space-md);
+    }
+    .stat-number {
+      font-weight: 900;
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1;
+      color: var(--navy);
+    }
+    .stat-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      opacity: 0.6;
+      margin-top: var(--space-xs);
+    }
+
+    /* --- Testimonial --- */
+    .testimonial-section {
+      padding: var(--space-xl) 0;
+    }
+    .testimonial-card {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .testimonial-quote-mark {
+      font-size: 72px;
+      line-height: 1;
+      color: var(--cyan);
+      font-weight: 900;
+      margin-bottom: -16px;
+    }
+    .testimonial-text {
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--navy);
+      margin-bottom: var(--space-md);
+      font-style: italic;
+    }
+    .testimonial-author {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray);
+    }
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 20px;
+      letter-spacing: 2px;
+      margin-bottom: var(--space-sm);
+    }
+
+    /* --- Download CTA --- */
+    .download-section {
+      padding: var(--space-xl) 0 var(--space-2xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .download-title {
+      font-weight: 900;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin-bottom: var(--space-sm);
+    }
+    .download-subtitle {
+      font-size: 19px;
+      color: var(--navy);
+      opacity: 0.7;
+      margin-bottom: var(--space-lg);
+    }
+    .download-buttons {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--navy);
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 16px;
+      transition: transform var(--ease-micro), box-shadow var(--ease-micro);
+      box-shadow: 0 4px 20px rgba(0,43,73,0.3);
+    }
+    .store-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,43,73,0.4);
+    }
+    .store-btn-sub {
+      font-size: 11px;
+      font-weight: 500;
+      opacity: 0.7;
+      display: block;
+      text-align: left;
+    }
+    .store-btn-main {
+      font-size: 18px;
+      font-weight: 800;
+      display: block;
+      text-align: left;
+    }
+    .store-btn-icon {
+      font-size: 28px;
+    }
+
+    /* Paper plane decoration */
+    .paper-plane {
+      position: absolute;
+      z-index: 3;
+      opacity: 0.15;
+      animation: fly 6s ease-in-out infinite;
+    }
+    @keyframes fly {
+      0%, 100% { transform: translate(0, 0) rotate(-15deg); }
+      25% { transform: translate(20px, -20px) rotate(-10deg); }
+      50% { transform: translate(40px, -5px) rotate(-18deg); }
+      75% { transform: translate(10px, -25px) rotate(-12deg); }
+    }
+
+    /* --- Footer --- */
+    .footer {
+      background: var(--gradient-dark);
+      color: var(--white);
+      padding: var(--space-lg) 0 var(--space-md);
+      position: relative;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--halftone);
+      background-size: var(--halftone-size);
+      pointer-events: none;
+    }
+    .footer > * { position: relative; z-index: 2; }
+    .footer-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-lg);
+    }
+    .footer-brand .logo {
+      color: var(--white);
+      font-size: 24px;
+      margin-bottom: var(--space-sm);
+    }
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      max-width: 280px;
+      line-height: 1.6;
+    }
+    .footer-links h4 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: var(--space-sm);
+    }
+    .footer-links ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      transition: color var(--ease-micro);
+    }
+    .footer-links a:hover { color: var(--cyan); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-legal-links {
+      display: flex;
+      gap: var(--space-md);
+    }
+    .footer-legal-links a { color: rgba(255,255,255,0.4); }
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* --- Scroll Reveal --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity var(--ease-entrance), transform var(--ease-entrance);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 100ms; }
+    .reveal-delay-2 { transition-delay: 200ms; }
+    .reveal-delay-3 { transition-delay: 300ms; }
+    .reveal-delay-4 { transition-delay: 400ms; }
+
+    /* --- Responsive --- */
+    @media (max-width: 992px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        text-align: center;
+      }
+      .hero-subtitle { margin-left: auto; margin-right: auto; }
+      .hero-badges { justify-content: center; }
+      .calc-card { margin: 0 auto; }
+      .hero-text { max-width: 100%; }
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .steps-grid,
+      .delivery-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero { padding: var(--space-lg) 0 var(--space-xl); }
+      .section-cream,
+      .trust-section,
+      .testimonial-section,
+      .download-section {
+        padding: var(--space-lg) 0;
+      }
+      .sticker { display: none; }
+      .footer-inner { flex-direction: column; gap: var(--space-md); }
+      .footer-bottom { flex-direction: column; gap: var(--space-sm); text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 var(--space-sm); }
+      .calc-card { padding: 24px 20px; }
+      .calc-input { font-size: 24px; }
+      .calc-receive-amount { font-size: 24px; }
+      .hero-title { font-size: clamp(36px, 10vw, 48px); }
+      .download-buttons { flex-direction: column; align-items: center; }
+      .store-btn { width: 100%; max-width: 280px; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back to Presentation -->
+  <div class="back-bar">
+    <div class="container">
+      <a href="../../index.html">&larr; Back to Presentation</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="psi">&psi;</span> pangea
+      </a>
+      <nav class="nav">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#delivery">Delivery Options</a>
+        <a href="#download">Download App</a>
+        <a href="#hero" class="btn btn-primary btn-sm">Send Money</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SECTION  (gradient + halftone)
+       COUNTRY: Mexico
+       ============================================================ -->
+  <section id="hero" class="section-gradient hero">
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Hero Text -->
+        <div class="hero-text reveal">
+          <!-- COUNTRY: Mexico -->
+          <h1 class="hero-title">Send Money<br>to Mexico</h1>
+          <!-- COUNTRY_DESCRIPTION -->
+          <p class="hero-subtitle">Fast, secure, and affordable. Send money to your loved ones in Mexico with just a few taps.</p>
+          <a href="#calculator" class="btn btn-primary btn-lg">
+            Get Started
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1l2.1 4.3 4.7.7-3.4 3.3.8 4.7L8 11.8 3.8 14l.8-4.7L1.2 6l4.7-.7L8 1z" fill="var(--gold)"/></svg>
+              <!-- COUNTRY_RATING -->
+              4.8 Rating
+            </div>
+            <div class="hero-badge">
+              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--green)" stroke-width="2"/><path d="M5 8l2 2 4-4" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              $0 Fees
+            </div>
+            <div class="hero-badge">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M1 4l7-3 7 3v5c0 3.5-3 6-7 7-4-1-7-3.5-7-7V4z" fill="none" stroke="var(--blue)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Licensed & Secure
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculator Card -->
+        <div class="calc-wrapper reveal reveal-delay-2" id="calculator">
+          <div class="calc-card">
+            <!-- COUNTRY: Mexico Calculator -->
+            <h3>Quick Transfer</h3>
+
+            <!-- You Send -->
+            <div class="calc-field">
+              <label class="calc-label">You Send</label>
+              <div class="calc-input-wrapper">
+                <!-- COUNTRY_FLAG_SEND -->
+                <span class="calc-currency-flag">&#127482;&#127480;</span>
+                <input type="text" class="calc-input" id="sendAmount" value="500" inputmode="numeric">
+                <span class="calc-currency-code">USD</span>
+              </div>
+            </div>
+
+            <!-- Exchange Rate -->
+            <div class="calc-rate">
+              <div class="calc-rate-icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4-4 4 4M4 10l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="calc-rate-text">
+                <!-- COUNTRY_EXCHANGE_RATE -->
+                1 USD = <span class="calc-rate-value" id="rateDisplay">17.25</span> <span id="receiveCurrencyLabel">MXN</span>
+              </span>
+            </div>
+
+            <!-- They Receive -->
+            <div class="calc-field">
+              <label class="calc-label">They Receive</label>
+              <div class="calc-receive">
+                <!-- COUNTRY_FLAG_RECEIVE -->
+                <span class="calc-currency-flag">&#127474;&#127485;</span>
+                <span class="calc-receive-amount" id="receiveAmount">8,625.00</span>
+                <!-- COUNTRY_CURRENCY_CODE -->
+                <span class="calc-currency-code" id="receiveCurrencyCode">MXN</span>
+              </div>
+            </div>
+
+            <!-- Fee -->
+            <div class="calc-fee">
+              <span class="calc-fee-label">Transfer Fee</span>
+              <span class="calc-fee-value">
+                $0.00
+                <span class="calc-fee-badge">Free</span>
+              </span>
+            </div>
+
+            <!-- CTA Button -->
+            <button class="calc-btn" onclick="window.open('https://www.pangeamoneytransfer.com','_blank')">
+              Send Money Now
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+
+          <!-- COUNTRY: Mexico — Floating Notification Sticker -->
+          <div class="sticker" style="bottom: -20px; left: -40px; --sticker-rotate: 3deg;">
+            <span class="sticker-dot sticker-dot--green"></span>
+            <!-- COUNTRY_STICKER_TEXT -->
+            $500 sent to Maria &#10003;
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Decorative Paper Plane -->
+    <svg class="paper-plane" style="top: 60px; right: 80px; width: 80px;" viewBox="0 0 64 64" fill="none">
+      <path d="M6 32L58 6 38 58l-8-18L6 32z" fill="var(--navy)" opacity="0.12"/>
+      <path d="M30 40l28-34M30 40l8 18" stroke="var(--navy)" stroke-width="1.5" opacity="0.15"/>
+    </svg>
+  </section>
+
+  <!-- ============================================================
+       HOW IT WORKS
+       ============================================================ -->
+  <section id="how-it-works" class="section-cream">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-overline">How It Works</p>
+        <!-- COUNTRY: Mexico -->
+        <h2 class="section-title">Send Money in 3 Easy Steps</h2>
+        <p class="section-subtitle">No complicated forms. No hidden fees. Just fast, reliable transfers.</p>
+      </div>
+
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-icon">&#128241;</div>
+          <div class="step-number">1</div>
+          <h3 class="step-title">Create Account</h3>
+          <p class="step-desc">Sign up in minutes with just your basic info. No paperwork, no branch visits.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-icon">&#128101;</div>
+          <div class="step-number">2</div>
+          <h3 class="step-title">Add Recipient</h3>
+          <!-- COUNTRY_DELIVERY_CONTEXT -->
+          <p class="step-desc">Enter their bank account or cash pickup details in Mexico. It only takes a moment.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card reveal reveal-delay-3">
+          <div class="step-icon">&#127881;</div>
+          <div class="step-number">3</div>
+          <h3 class="step-title">Send Money</h3>
+          <!-- COUNTRY_SEND_SPEED -->
+          <p class="step-desc">Confirm and send instantly. Your recipient in Mexico gets the money fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DELIVERY METHODS
+       COUNTRY: Mexico
+       ============================================================ -->
+  <section id="delivery" class="section-cream" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-overline">Delivery Options</p>
+        <h2 class="section-title">Choose How They Receive</h2>
+        <!-- COUNTRY_DELIVERY_SUBTITLE -->
+        <p class="section-subtitle">Multiple ways to get money to your loved ones across Mexico.</p>
+      </div>
+
+      <div class="delivery-grid">
+        <!-- Bank Deposit -->
+        <div class="delivery-card reveal reveal-delay-1">
+          <div class="delivery-icon">&#127974;</div>
+          <h3 class="delivery-title">Bank Deposit</h3>
+          <!-- COUNTRY_BANKS -->
+          <p class="delivery-desc">Direct deposit to Banorte, BBVA, Santander, Banamex, and all major Mexican banks.</p>
+          <span class="delivery-tag delivery-tag--popular">Most Popular</span>
+        </div>
+
+        <!-- Cash Pickup -->
+        <div class="delivery-card reveal reveal-delay-2">
+          <div class="delivery-icon">&#128176;</div>
+          <h3 class="delivery-title">Cash Pickup</h3>
+          <!-- COUNTRY_PICKUP_LOCATIONS -->
+          <p class="delivery-desc">Available at 70,000+ locations across Mexico including Elektra, Banco Azteca, and more.</p>
+          <span class="delivery-tag delivery-tag--fast">70,000+ Locations</span>
+        </div>
+
+        <!-- Debit Card -->
+        <div class="delivery-card reveal reveal-delay-3">
+          <div class="delivery-icon">&#128179;</div>
+          <h3 class="delivery-title">Debit Card</h3>
+          <p class="delivery-desc">Instant delivery to any Visa or Mastercard debit card. Money arrives in minutes.</p>
+          <span class="delivery-tag delivery-tag--fast">Instant</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST / STATS  (gradient + halftone)
+       ============================================================ -->
+  <section class="section-gradient trust-section">
+    <div class="container">
+      <h2 class="trust-title reveal">Trusted by Millions</h2>
+
+      <div class="stats-grid">
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-number">10M+</div>
+          <div class="stat-label">Transfers Completed</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-number">$0</div>
+          <div class="stat-label">Transfer Fees</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <!-- COUNTRY_COUNT -->
+          <div class="stat-number">22+</div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-4">
+          <div class="stat-number">4.8&#9733;</div>
+          <div class="stat-label">App Store Rating</div>
+        </div>
+      </div>
+
+      <!-- Floating Sticker -->
+      <!-- COUNTRY_TRUST_STICKER -->
+      <div class="sticker" style="bottom: 40px; right: 60px; --sticker-rotate: -2deg; animation-delay: 1s;">
+        <span class="sticker-dot sticker-dot--green"></span>
+        Pesos received &#10003;
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIAL
+       COUNTRY: Mexico
+       ============================================================ -->
+  <section class="section-cream testimonial-section">
+    <div class="container">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote-mark">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <!-- COUNTRY_TESTIMONIAL -->
+        <p class="testimonial-text">I send money to my family in Guadalajara every month. Pangea makes it so easy &mdash; the money arrives the same day!</p>
+        <!-- COUNTRY_TESTIMONIAL_AUTHOR -->
+        <p class="testimonial-author">&mdash; Mar&iacute;a G., Chicago</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DOWNLOAD CTA  (gradient + halftone)
+       ============================================================ -->
+  <section id="download" class="section-gradient download-section">
+    <div class="container">
+      <div class="reveal">
+        <h2 class="download-title">Download the App</h2>
+        <p class="download-subtitle">Available on iOS and Android. Start sending money in minutes.</p>
+      </div>
+
+      <div class="download-buttons reveal reveal-delay-1">
+        <a href="https://apps.apple.com/us/app/pangea-money-transfer/id975377432" target="_blank" class="store-btn">
+          <span class="store-btn-icon">&#63743;</span>
+          <span>
+            <span class="store-btn-sub">Download on the</span>
+            <span class="store-btn-main">App Store</span>
+          </span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.pangea.consumer" target="_blank" class="store-btn">
+          <span class="store-btn-icon">&#9654;</span>
+          <span>
+            <span class="store-btn-sub">Get it on</span>
+            <span class="store-btn-main">Google Play</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Paper Plane Decorations -->
+    <svg class="paper-plane" style="bottom: 30px; left: 60px; width: 100px; animation-delay: 2s;" viewBox="0 0 64 64" fill="none">
+      <path d="M6 32L58 6 38 58l-8-18L6 32z" fill="var(--navy)" opacity="0.1"/>
+      <path d="M30 40l28-34M30 40l8 18" stroke="var(--navy)" stroke-width="1.5" opacity="0.12"/>
+    </svg>
+    <svg class="paper-plane" style="top: 30px; right: 120px; width: 50px; animation-delay: 3.5s;" viewBox="0 0 64 64" fill="none">
+      <path d="M6 32L58 6 38 58l-8-18L6 32z" fill="var(--navy)" opacity="0.08"/>
+    </svg>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="psi">&psi;</span> pangea
+          </a>
+          <p>Send money to the people who matter most. Fast, affordable, and secure.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Licenses</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <!-- COPYRIGHT_YEAR -->
+        <span>&copy; 2026 Pangea. All rights reserved.</span>
+        <div class="footer-legal-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script>
+    // --- Scroll Reveal with Intersection Observer ---
+    (function() {
+      const reveals = document.querySelectorAll('.reveal');
+      if (!reveals.length) return;
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      reveals.forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    // --- Calculator Logic ---
+    // COUNTRY_EXCHANGE_RATE_VALUE
+    var EXCHANGE_RATE = 17.25;
+    // COUNTRY_CURRENCY_CODE_VALUE
+    var CURRENCY_CODE = 'MXN';
+
+    var sendInput = document.getElementById('sendAmount');
+    var receiveDisplay = document.getElementById('receiveAmount');
+
+    function formatNumber(num) {
+      return num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    function updateCalculation() {
+      var rawValue = sendInput.value.replace(/[^0-9.]/g, '');
+      var amount = parseFloat(rawValue);
+      if (isNaN(amount) || amount <= 0) {
+        receiveDisplay.textContent = '0.00';
+        return;
+      }
+      var result = amount * EXCHANGE_RATE;
+      receiveDisplay.textContent = formatNumber(result);
+    }
+
+    sendInput.addEventListener('input', updateCalculation);
+    sendInput.addEventListener('focus', function() {
+      sendInput.select();
+    });
+
+    // --- Smooth Scroll for Anchors ---
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // --- Mobile Menu Toggle (simple) ---
+    var menuBtn = document.querySelector('.mobile-menu-btn');
+    var nav = document.querySelector('.nav');
+    if (menuBtn && nav) {
+      menuBtn.addEventListener('click', function() {
+        var isOpen = nav.style.display === 'flex';
+        nav.style.display = isOpen ? 'none' : 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.top = '64px';
+        nav.style.left = '0';
+        nav.style.right = '0';
+        nav.style.background = 'var(--white)';
+        nav.style.padding = 'var(--space-md)';
+        nav.style.gap = 'var(--space-sm)';
+        nav.style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)';
+        nav.style.zIndex = '50';
+        if (isOpen) {
+          nav.removeAttribute('style');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# Progress: Existing Microsite & Documentation Merge
+# Generated: 2026-03-09
+
+## Phase 1: Parallax Scaffolding + Hero + Showcase
+[DONE] Build parallax container/layer CSS system
+[DONE] Implement vanilla JS parallax engine
+[DONE] Create hero section with depth layers
+[DONE] Migrate Marketing Suite showcase as parallax hero moment
+[DONE] Add scroll progress indicator
+[PENDING] Verify parallax works in Chrome + Safari (needs browser check)
+Verification: Open in browser — parallax depth layers visible, hero renders, showcase animates
+
+## Phase 2: Lessons Content + Context Window Hero Moment
+[DONE] Add Lesson 1, 2, 3 content from patterns doc
+[DONE] Migrate context window animation as parallax hero moment
+[DONE] Add Live Demo section with link to /landing/
+[DONE] Intersection Observer reveals for each lesson
+Verification: All 3 lessons readable, context window animation triggers, demo link works
+
+## Phase 3: Tips Content + Steve Merge Pass
+[DONE] Add Tip 1, 2, 3 content with case studies
+[DONE] Implement content depth decisions (inline case studies, progressive reveal ELI5/tips)
+[DONE] Add expand/reveal interactions
+Note: Content merge decisions made inline (case studies inline, ELI5/everyday tips as progressive reveals)
+Verification: All 3 tips readable with case studies, progressive reveals functional
+
+## Phase 4: Further Reading + Mobile + Deploy
+[DONE] Add Further Reading section with curated sources
+[DONE] Implement mobile graceful degradation (parallax disabled on touch/mobile)
+[DONE] CSS responsive breakpoints for mobile viewport
+[PENDING] Deploy to Vercel at applacat.com/pangealunchnlearn
+Verification: Further Reading renders, mobile layout clean, deployed URL accessible

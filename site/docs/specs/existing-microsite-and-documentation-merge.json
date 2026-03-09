@@ -1,0 +1,84 @@
+{
+  "feature": "existing-microsite-and-documentation-merge",
+  "title": "Existing Microsite & Documentation Merge",
+  "status": "READY_FOR_IMPLEMENTATION",
+  "started": "2026-03-09",
+  "spec_path": "docs/specs/existing-microsite-and-documentation-merge.md",
+  "phases": [
+    {
+      "id": 1,
+      "name": "Parallax Scaffolding + Hero + Showcase",
+      "status": "PENDING",
+      "user_stories": ["US-1", "US-2", "US-3"],
+      "tasks": [
+        "Build parallax container/layer CSS system",
+        "Implement vanilla JS parallax engine",
+        "Create hero section with depth layers",
+        "Migrate Marketing Suite showcase as parallax hero moment",
+        "Add scroll progress indicator"
+      ],
+      "verification": "Open in browser — parallax depth layers visible, hero renders, showcase animates"
+    },
+    {
+      "id": 2,
+      "name": "Lessons Content + Context Window Hero Moment",
+      "status": "PENDING",
+      "user_stories": ["US-4", "US-5"],
+      "tasks": [
+        "Add Lesson 1, 2, 3 content from patterns doc",
+        "Migrate context window animation as parallax hero moment",
+        "Add Live Demo section with link to /landing/",
+        "Intersection Observer reveals for each lesson"
+      ],
+      "verification": "All 3 lessons readable, context window animation triggers, demo link works"
+    },
+    {
+      "id": 3,
+      "name": "Tips Content + Steve Merge Pass",
+      "status": "PENDING",
+      "user_stories": ["US-6"],
+      "dependencies": ["Steve content merge pass"],
+      "tasks": [
+        "Run Steve agent content merge pass",
+        "Add Tip 1, 2, 3 content with case studies",
+        "Implement content depth decisions from Steve",
+        "Add expand/reveal interactions where specified"
+      ],
+      "verification": "All 3 tips readable with case studies, progressive reveals functional"
+    },
+    {
+      "id": 4,
+      "name": "Further Reading + Mobile + Deploy",
+      "status": "PENDING",
+      "user_stories": ["US-7", "US-8", "US-9"],
+      "tasks": [
+        "Add Further Reading section",
+        "Implement mobile graceful degradation",
+        "Test on mobile viewport sizes",
+        "Deploy to Vercel at applacat.com/pangealunchnlearn"
+      ],
+      "verification": "Further Reading renders, mobile layout clean, deployed URL accessible"
+    }
+  ],
+  "user_stories": [
+    {"id": "US-1", "title": "Parallax Scaffolding", "phase": 1},
+    {"id": "US-2", "title": "Hero Section", "phase": 1},
+    {"id": "US-3", "title": "Marketing Suite Showcase (Parallax Hero Moment)", "phase": 1},
+    {"id": "US-4", "title": "Live Demo Section", "phase": 2},
+    {"id": "US-5", "title": "Three Lessons Content", "phase": 2},
+    {"id": "US-6", "title": "Three Tips Content", "phase": 3},
+    {"id": "US-7", "title": "Further Reading", "phase": 4},
+    {"id": "US-8", "title": "Mobile Graceful Degradation", "phase": 4},
+    {"id": "US-9", "title": "Deployment", "phase": 4}
+  ],
+  "tech_stack": {
+    "html": "Single index.html with semantic sections",
+    "css": "Rebuilt with parallax layer system + brand tokens",
+    "js": "Vanilla JS parallax engine + Intersection Observer",
+    "dependencies": "None (zero third-party libraries)"
+  },
+  "deployment": {
+    "platform": "Vercel",
+    "domain": "applacat.com/pangealunchnlearn"
+  }
+}
