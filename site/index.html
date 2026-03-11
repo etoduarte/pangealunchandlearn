@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marketing & AI — What Actually Works | Pangea Lunch & Learn</title>
+  <title>Pangea Marketing Suite — AI Coding Case Study | Lunch & Learn</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -13,9 +13,16 @@
 <!-- Scroll Progress Bar -->
 <div class="scroll-progress" id="scrollProgress"></div>
 
+<!-- Tooltip element (positioned via JS) -->
+<div class="tooltip-popup" id="tooltipPopup" role="tooltip" aria-hidden="true">
+  <div class="tooltip-popup-content" id="tooltipContent"></div>
+</div>
+
 <!-- ============================================================
-     HERO
+     ACT 1 — THE PROBLEM & THE TOOL
      ============================================================ -->
+
+<!-- ===== SECTION 1.1 — HERO ===== -->
 <section class="parallax-section hero halftone-overlay" id="hero">
   <div class="parallax-bg" data-speed="0.3">
     <div class="orb orb--cyan" style="width: 500px; height: 500px; top: -10%; right: -5%;"></div>
@@ -27,9 +34,9 @@
 
   <div class="parallax-content hero-title">
     <div class="overline reveal" style="color: var(--cyan);">Lunch & Learn</div>
-    <h1 class="display reveal reveal-delay-1">Marketing</h1>
-    <h1 class="display reveal reveal-delay-2"><span class="accent">& AI</span></h1>
-    <p class="h2 hero-subtitle reveal reveal-delay-3">What Actually Works</p>
+    <h1 class="display reveal reveal-delay-1">Pangea</h1>
+    <h1 class="display reveal reveal-delay-2"><span class="accent">Marketing Suite</span></h1>
+    <p class="h2 hero-subtitle reveal reveal-delay-3">AI Coding Case Study</p>
     <p class="body hero-author reveal reveal-delay-4">Jose Duarte</p>
   </div>
 
@@ -45,1022 +52,1053 @@
   </div>
 </section>
 
-<!-- ============================================================
-     MARKETING SUITE SHOWCASE — Scroll-Driven Story
-     One creative's journey: fragmented → hacked → solved
-     ============================================================ -->
-<div class="showcase-scroll" id="showcase">
-  <div class="showcase-sticky">
-    <div class="showcase-bg">
-      <div class="orb orb--cyan" style="width: 600px; height: 600px; top: -20%; left: -15%; opacity: 0.12;"></div>
-      <div class="orb orb--green" style="width: 300px; height: 300px; bottom: -10%; right: 5%; opacity: 0.08;"></div>
-    </div>
-
-    <!-- Flying dots layer (above phases, for transition animations) -->
-    <div class="showcase-dots" id="showcaseDots"></div>
-
-    <!-- ===== PHASE 1: Facebook Ads Manager Tree ===== -->
-    <div class="showcase-layer showcase-layer--active" id="phase0">
-      <div class="container" style="text-align: center;">
-        <span class="section-label section-label--coral">The Problem</span>
-        <h2 class="h2 section-title" style="margin-top: var(--space-sm);">One ad. Five branches. No clarity.</h2>
-        <p class="section-lead" style="max-width: 600px;">Facebook reports by campaign — not by creative. Your best ad's performance is scattered across branches you'd never think to combine.</p>
-
-        <!-- Facebook Ads Manager Tree -->
-        <div class="fb-manager">
-          <div class="fb-toolbar">
-            <div class="fb-toolbar-left">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-              <span>Ads Manager</span>
-            </div>
-            <div class="fb-toolbar-right">
-              <span class="fb-tab fb-tab--active">All</span>
-              <span class="fb-tab">Active</span>
-            </div>
-          </div>
-
-          <!-- Tree: Campaign 1 -->
-          <div class="fb-tree-campaign">
-            <div class="fb-tree-row fb-tree-row--campaign">
-              <div class="fb-tree-caret">&#9660;</div>
-              <div class="fb-tree-icon fb-tree-icon--campaign"></div>
-              <div class="fb-tree-name">MX-Installs-Jan</div>
-              <div class="fb-tree-metrics">
-                <span>$8,300</span>
-                <span>410K</span>
-                <span>2.8%</span>
-              </div>
-            </div>
-            <!-- Ad Set -->
-            <div class="fb-tree-adset">
-              <div class="fb-tree-row fb-tree-row--adset">
-                <div class="fb-tree-caret">&#9660;</div>
-                <div class="fb-tree-icon fb-tree-icon--adset"></div>
-                <div class="fb-tree-name">18-35 / Mexico</div>
-                <div class="fb-tree-metrics">
-                  <span>$5,200</span>
-                  <span>268K</span>
-                  <span>3.1%</span>
-                </div>
-              </div>
-              <!-- Ads -->
-              <div class="fb-tree-ad fb-tree-ad--hero">
-                <div class="fb-thumb fb-thumb--hero"></div>
-                <div class="fb-tree-name">Send Money Fast — Video A</div>
-                <div class="fb-tree-metrics">
-                  <span>$3,200</span>
-                  <span>142K</span>
-                  <span>3.41%</span>
-                </div>
-              </div>
-              <div class="fb-tree-ad">
-                <div class="fb-thumb"></div>
-                <div class="fb-tree-name">Referral Bonus — Static B</div>
-                <div class="fb-tree-metrics">
-                  <span>$2,000</span>
-                  <span>126K</span>
-                  <span>2.6%</span>
-                </div>
-              </div>
-            </div>
-            <!-- Ad Set 2 -->
-            <div class="fb-tree-adset">
-              <div class="fb-tree-row fb-tree-row--adset">
-                <div class="fb-tree-caret">&#9654;</div>
-                <div class="fb-tree-icon fb-tree-icon--adset"></div>
-                <div class="fb-tree-name">35-55 / Mexico</div>
-                <div class="fb-tree-metrics">
-                  <span>$3,100</span>
-                  <span>142K</span>
-                  <span>2.4%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tree: Campaign 2 -->
-          <div class="fb-tree-campaign">
-            <div class="fb-tree-row fb-tree-row--campaign">
-              <div class="fb-tree-caret">&#9660;</div>
-              <div class="fb-tree-icon fb-tree-icon--campaign"></div>
-              <div class="fb-tree-name">MX-Brand-Q1</div>
-              <div class="fb-tree-metrics">
-                <span>$12,400</span>
-                <span>680K</span>
-                <span>2.5%</span>
-              </div>
-            </div>
-            <div class="fb-tree-adset">
-              <div class="fb-tree-row fb-tree-row--adset">
-                <div class="fb-tree-caret">&#9660;</div>
-                <div class="fb-tree-icon fb-tree-icon--adset"></div>
-                <div class="fb-tree-name">Broad / Mexico</div>
-                <div class="fb-tree-metrics">
-                  <span>$9,900</span>
-                  <span>538K</span>
-                  <span>2.7%</span>
-                </div>
-              </div>
-              <div class="fb-tree-ad fb-tree-ad--hero">
-                <div class="fb-thumb fb-thumb--hero"></div>
-                <div class="fb-tree-name">Send Money Fast — Video A</div>
-                <div class="fb-tree-metrics">
-                  <span>$4,800</span>
-                  <span>198K</span>
-                  <span>3.40%</span>
-                </div>
-              </div>
-              <div class="fb-tree-ad">
-                <div class="fb-thumb"></div>
-                <div class="fb-tree-name">Brand Awareness Carousel</div>
-                <div class="fb-tree-metrics">
-                  <span>$5,100</span>
-                  <span>340K</span>
-                  <span>2.12%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tree: Campaign 3 -->
-          <div class="fb-tree-campaign">
-            <div class="fb-tree-row fb-tree-row--campaign">
-              <div class="fb-tree-caret">&#9660;</div>
-              <div class="fb-tree-icon fb-tree-icon--campaign"></div>
-              <div class="fb-tree-name">CO-Lookalike-Feb</div>
-              <div class="fb-tree-metrics">
-                <span>$3,500</span>
-                <span>157K</span>
-                <span>3.2%</span>
-              </div>
-            </div>
-            <div class="fb-tree-adset">
-              <div class="fb-tree-row fb-tree-row--adset">
-                <div class="fb-tree-caret">&#9660;</div>
-                <div class="fb-tree-icon fb-tree-icon--adset"></div>
-                <div class="fb-tree-name">Lookalike 1% / Colombia</div>
-                <div class="fb-tree-metrics">
-                  <span>$3,500</span>
-                  <span>157K</span>
-                  <span>3.2%</span>
-                </div>
-              </div>
-              <div class="fb-tree-ad fb-tree-ad--hero">
-                <div class="fb-thumb fb-thumb--hero"></div>
-                <div class="fb-tree-name">Send Money Fast — Video A</div>
-                <div class="fb-tree-metrics">
-                  <span>$2,100</span>
-                  <span>89K</span>
-                  <span>3.40%</span>
-                </div>
-              </div>
-              <div class="fb-tree-ad">
-                <div class="fb-thumb"></div>
-                <div class="fb-tree-name">Referral Bonus GT — Video C</div>
-                <div class="fb-tree-metrics">
-                  <span>$1,400</span>
-                  <span>68K</span>
-                  <span>3.09%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tree: Campaign 4 -->
-          <div class="fb-tree-campaign">
-            <div class="fb-tree-row fb-tree-row--campaign">
-              <div class="fb-tree-caret">&#9660;</div>
-              <div class="fb-tree-icon fb-tree-icon--campaign"></div>
-              <div class="fb-tree-name">MX-Retarget-Q1</div>
-              <div class="fb-tree-metrics">
-                <span>$9,800</span>
-                <span>525K</span>
-                <span>2.3%</span>
-              </div>
-            </div>
-            <div class="fb-tree-adset">
-              <div class="fb-tree-row fb-tree-row--adset">
-                <div class="fb-tree-caret">&#9660;</div>
-                <div class="fb-tree-icon fb-tree-icon--adset"></div>
-                <div class="fb-tree-name">Retarget / All Visitors</div>
-                <div class="fb-tree-metrics">
-                  <span>$9,800</span>
-                  <span>525K</span>
-                  <span>2.3%</span>
-                </div>
-              </div>
-              <div class="fb-tree-ad fb-tree-ad--hero">
-                <div class="fb-thumb fb-thumb--hero"></div>
-                <div class="fb-tree-name">Send Money Fast — Video A</div>
-                <div class="fb-tree-metrics">
-                  <span>$5,600</span>
-                  <span>245K</span>
-                  <span>3.41%</span>
-                </div>
-              </div>
-              <div class="fb-tree-ad">
-                <div class="fb-thumb"></div>
-                <div class="fb-tree-name">Old Creative — Image E</div>
-                <div class="fb-tree-metrics">
-                  <span>$4,200</span>
-                  <span>280K</span>
-                  <span>1.36%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tree: Campaign 5 -->
-          <div class="fb-tree-campaign">
-            <div class="fb-tree-row fb-tree-row--campaign">
-              <div class="fb-tree-caret">&#9660;</div>
-              <div class="fb-tree-icon fb-tree-icon--campaign"></div>
-              <div class="fb-tree-name">GT-Install-Mar</div>
-              <div class="fb-tree-metrics">
-                <span>$6,400</span>
-                <span>341K</span>
-                <span>2.5%</span>
-              </div>
-            </div>
-            <div class="fb-tree-adset">
-              <div class="fb-tree-row fb-tree-row--adset">
-                <div class="fb-tree-caret">&#9660;</div>
-                <div class="fb-tree-icon fb-tree-icon--adset"></div>
-                <div class="fb-tree-name">18-45 / Guatemala</div>
-                <div class="fb-tree-metrics">
-                  <span>$6,400</span>
-                  <span>341K</span>
-                  <span>2.5%</span>
-                </div>
-              </div>
-              <div class="fb-tree-ad fb-tree-ad--hero">
-                <div class="fb-thumb fb-thumb--hero"></div>
-                <div class="fb-tree-name">Send Money Fast — Video A</div>
-                <div class="fb-tree-metrics">
-                  <span>$2,800</span>
-                  <span>146K</span>
-                  <span>3.46%</span>
-                </div>
-              </div>
-              <div class="fb-tree-ad">
-                <div class="fb-thumb"></div>
-                <div class="fb-tree-name">Flash Sale — Video D</div>
-                <div class="fb-tree-metrics">
-                  <span>$3,600</span>
-                  <span>195K</span>
-                  <span>1.80%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /fb-manager -->
-      </div>
-    </div>
-
-    <!-- ===== PHASE 2: Excel Pivot Table ===== -->
-    <div class="showcase-layer" id="phase1">
-      <div class="container" style="text-align: center;">
-        <span class="section-label section-label--gold">The Hack</span>
-        <h2 class="h2 section-title" style="margin-top: var(--space-sm);">Download everything. Pivot on ad name.</h2>
-        <p class="section-lead" style="max-width: 600px;">Export the raw data, bring it into Excel, and pivot to finally see one creative's true numbers. It works — but it's hours of manual labor, and the data is already stale.</p>
-
-        <!-- Excel Pivot Mock -->
-        <div class="xl-pivot">
-          <div class="xl-toolbar">
-            <div class="xl-toolbar-left">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
-              <span>Pivot Table — Ad Name</span>
-            </div>
-            <div class="xl-toolbar-right">
-              <span class="xl-formula">=SUMIFS(Spend, Ad_Name, "Summer Fiesta MX...")</span>
-            </div>
-          </div>
-          <div class="xl-header-row">
-            <div class="xl-col xl-col--name">Ad Name</div>
-            <div class="xl-col xl-col--metric">Spend</div>
-            <div class="xl-col xl-col--metric">Impr.</div>
-            <div class="xl-col xl-col--metric">Clicks</div>
-            <div class="xl-col xl-col--metric">CTR</div>
-            <div class="xl-col xl-col--metric">Installs</div>
-            <div class="xl-col xl-col--metric">CPI</div>
-          </div>
-
-          <!-- Consolidated hero row -->
-          <div class="xl-row xl-row--hero">
-            <div class="xl-col xl-col--name">
-              <div class="fb-thumb fb-thumb--hero xl-thumb"></div>
-              <strong>Send Money Fast — Video A</strong>
-            </div>
-            <div class="xl-col xl-col--metric"><strong>$18,500</strong></div>
-            <div class="xl-col xl-col--metric"><strong>820,000</strong></div>
-            <div class="xl-col xl-col--metric"><strong>28,000</strong></div>
-            <div class="xl-col xl-col--metric"><strong class="xl-highlight">3.41%</strong></div>
-            <div class="xl-col xl-col--metric"><strong>4,200</strong></div>
-            <div class="xl-col xl-col--metric"><strong class="xl-highlight">$4.40</strong></div>
-          </div>
-
-          <!-- Other creatives -->
-          <div class="xl-row">
-            <div class="xl-col xl-col--name"><div class="fb-thumb xl-thumb"></div>Brand Awareness Carousel</div>
-            <div class="xl-col xl-col--metric">$22,000</div>
-            <div class="xl-col xl-col--metric">1,500,000</div>
-            <div class="xl-col xl-col--metric">35,000</div>
-            <div class="xl-col xl-col--metric">2.33%</div>
-            <div class="xl-col xl-col--metric">3,800</div>
-            <div class="xl-col xl-col--metric">$5.79</div>
-          </div>
-          <div class="xl-row">
-            <div class="xl-col xl-col--name"><div class="fb-thumb xl-thumb"></div>Referral Bonus GT — Video C</div>
-            <div class="xl-col xl-col--metric">$6,200</div>
-            <div class="xl-col xl-col--metric">310,000</div>
-            <div class="xl-col xl-col--metric">9,800</div>
-            <div class="xl-col xl-col--metric">3.16%</div>
-            <div class="xl-col xl-col--metric">1,450</div>
-            <div class="xl-col xl-col--metric">$4.28</div>
-          </div>
-          <div class="xl-row">
-            <div class="xl-col xl-col--name"><div class="fb-thumb xl-thumb"></div>Flash Sale — Video D</div>
-            <div class="xl-col xl-col--metric">$15,000</div>
-            <div class="xl-col xl-col--metric">980,000</div>
-            <div class="xl-col xl-col--metric">18,000</div>
-            <div class="xl-col xl-col--metric">1.84%</div>
-            <div class="xl-col xl-col--metric">1,500</div>
-            <div class="xl-col xl-col--metric">$10.00</div>
-          </div>
-          <div class="xl-row">
-            <div class="xl-col xl-col--name"><div class="fb-thumb xl-thumb"></div>Old Creative — Image E</div>
-            <div class="xl-col xl-col--metric">$4,200</div>
-            <div class="xl-col xl-col--metric">280,000</div>
-            <div class="xl-col xl-col--metric">3,800</div>
-            <div class="xl-col xl-col--metric">1.36%</div>
-            <div class="xl-col xl-col--metric">320</div>
-            <div class="xl-col xl-col--metric">$13.13</div>
-          </div>
-
-          <!-- "5 rows combined" annotation -->
-          <div class="xl-annotation">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 16v-4M12 8h.01"/></svg>
-            5 campaign rows → 1 creative. Hours of VLOOKUP. Already stale.
-          </div>
-        </div><!-- /xl-pivot -->
-      </div>
-    </div>
-
-    <!-- ===== PHASE 3: Signal Map ===== -->
-    <div class="showcase-layer" id="phase2">
-      <div class="container" style="text-align: center;">
-        <span class="section-label section-label--cyan">The AI-Coded Solution</span>
-        <h2 class="h2 section-title" style="margin-top: var(--space-sm);">Every creative. Scored instantly.</h2>
-        <p class="section-lead" style="max-width: 600px;">The Pangea Marketing Suite treats each creative as a database item. Normalized scoring across efficiency and scale — see your entire portfolio at a glance.</p>
-
-        <!-- Signal Map (full-width hero moment) -->
-        <div class="sm-container">
-          <div class="sm-chrome">
-            <div class="sm-chrome-left">
-              <div class="block-indicator block-indicator--cyan"></div>
-              <span class="sm-title">Signal Map</span>
-              <span class="sm-subtitle">15 Creatives</span>
-            </div>
-            <div class="sm-chrome-right">
-              Pangea Marketing Suite
-            </div>
-          </div>
-          <div class="sm-plot">
-            <div class="sm-axis-y">Efficiency Score</div>
-            <div class="sm-axis-x">Scale Score</div>
-            <div class="sm-cross-h"></div>
-            <div class="sm-cross-v"></div>
-            <div class="sm-quad sm-quad--tl">Converter</div>
-            <div class="sm-quad sm-quad--tr">Star</div>
-            <div class="sm-quad sm-quad--bl">Red Flag</div>
-            <div class="sm-quad sm-quad--br">Scaler</div>
-
-            <!-- Hero squircle — Send Money Fast -->
-            <div class="sm-sq sm-sq--hero" style="left: 80%; bottom: 78%; --size: 36px;" data-label="Send Money Fast — Video A">
-              <div class="sm-sq-ring"></div>
-            </div>
-
-            <!-- Other squircles -->
-            <div class="sm-sq sm-sq--star" style="left: 85%; bottom: 70%; --size: 20px;" data-label="Referral Gold V2"></div>
-            <div class="sm-sq sm-sq--rising" style="left: 78%; bottom: 82%; --size: 12px;" data-label="New Concept Test A"></div>
-            <div class="sm-sq sm-sq--converter" style="left: 28%; bottom: 78%; --size: 18px;" data-label="Retarget Install GT"></div>
-            <div class="sm-sq sm-sq--converter" style="left: 22%; bottom: 82%; --size: 14px;" data-label="Lookalike CO"></div>
-            <div class="sm-sq sm-sq--converter" style="left: 18%; bottom: 88%; --size: 12px;" data-label="Email Reactivation"></div>
-            <div class="sm-sq sm-sq--scaler" style="left: 82%; bottom: 38%; --size: 22px;" data-label="Brand Awareness MX"></div>
-            <div class="sm-sq sm-sq--scaler" style="left: 88%; bottom: 32%; --size: 18px;" data-label="Broad Targeting"></div>
-            <div class="sm-sq sm-sq--risk" style="left: 78%; bottom: 22%; --size: 24px;" data-label="Flash Sale V3"></div>
-            <div class="sm-sq sm-sq--core" style="left: 52%; bottom: 50%; --size: 20px;" data-label="Evergreen Static A"></div>
-            <div class="sm-sq sm-sq--core" style="left: 48%; bottom: 46%; --size: 16px;" data-label="Standard Install MX"></div>
-            <div class="sm-sq sm-sq--core" style="left: 44%; bottom: 52%; --size: 14px;" data-label="Default Creative CO"></div>
-            <div class="sm-sq sm-sq--underperf" style="left: 35%; bottom: 25%; --size: 14px;" data-label="Old Creative E"></div>
-            <div class="sm-sq sm-sq--redflag" style="left: 48%; bottom: 15%; --size: 22px;" data-label="Legacy Broad MX"></div>
-            <div class="sm-sq sm-sq--rising" style="left: 75%; bottom: 85%; --size: 10px;" data-label="Micro Test B"></div>
-          </div>
-
-          <!-- Hero callout card -->
-          <div class="sm-hero-card" id="smHeroCard">
-            <div class="sm-hero-card-thumb"></div>
-            <div class="sm-hero-card-info">
-              <div class="sm-hero-card-name">Send Money Fast — Video A</div>
-              <div class="sm-hero-card-category"><span class="sm-badge sm-badge--star">Star</span></div>
-              <div class="sm-hero-card-metrics">
-                <span>Eff: <strong>132</strong></span>
-                <span>Scale: <strong>124</strong></span>
-                <span>CTR: <strong>3.41%</strong></span>
-                <span>CPI: <strong>$4.40</strong></span>
-              </div>
-            </div>
-          </div>
-        </div><!-- /sm-container -->
-
-        <p class="body-lg" style="margin-top: var(--space-lg); font-style: italic; color: rgba(255,255,255,0.4);">
-          But this session isn't about one tool. It's about what <strong style="color: var(--white);">anyone</strong> on this team can do.
-        </p>
-      </div>
-    </div>
-
-  </div><!-- /showcase-sticky -->
-</div><!-- /showcase-scroll -->
-
-<!-- ============================================================
-     LIVE DEMO
-     ============================================================ -->
-<section class="parallax-section section-pad" id="demo">
-  <div class="parallax-bg" data-speed="0.15">
-    <div class="orb orb--blue" style="width: 400px; height: 400px; top: -10%; right: -10%; opacity: 0.1;"></div>
-  </div>
-
-  <div class="parallax-content container" style="text-align: center;">
-    <span class="section-label section-label--green reveal">Claude Cowork Demo</span>
-    <h2 class="h1 section-title reveal reveal-delay-1">Watch it happen</h2>
-
-    <div class="demo-flow reveal reveal-delay-2" style="margin-top: var(--space-xl);">
-      <div class="demo-step">
-        <div class="demo-step-icon">📊</div>
-        <div class="h3">Raw CSV</div>
-        <div class="caption" style="color: rgba(255,255,255,0.4);">Messy data dump</div>
-      </div>
-      <div class="demo-arrow">→</div>
-      <div class="demo-step">
-        <div class="demo-step-icon">📋</div>
-        <div class="h3">Clean Excel</div>
-        <div class="caption" style="color: rgba(255,255,255,0.4);">Structured & formatted</div>
-      </div>
-      <div class="demo-arrow">→</div>
-      <div class="demo-step">
-        <div class="demo-step-icon">🎯</div>
-        <div class="h3">Presentation</div>
-        <div class="caption" style="color: rgba(255,255,255,0.4);">Ready for stakeholders</div>
-      </div>
-    </div>
-
-    <div class="reveal reveal-delay-3" style="margin-top: var(--space-xl);">
-      <a href="landing/index.html" class="landing-sticker">
-        See the Pangea landing page redesign →
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     TRANSITION: 3 Lessons
-     ============================================================ -->
-<section class="parallax-section section-pad" id="lessons-intro">
-  <div class="parallax-bg" data-speed="0.25">
-    <div class="orb orb--cyan" style="width: 400px; height: 400px; top: 0; left: -10%; opacity: 0.08;"></div>
-    <div class="geo geo--ring" style="width: 180px; height: 180px; bottom: 10%; right: 15%; opacity: 0.04;"></div>
-  </div>
-
-  <div class="parallax-content container" style="text-align: center;">
-    <div class="section-divider reveal" style="margin-bottom: var(--space-lg);"></div>
-    <h2 class="h1 reveal reveal-delay-1">Three things to understand first.</h2>
-    <p class="section-lead reveal reveal-delay-2">Before the tips — the mechanics. How AI actually processes what you give it.</p>
-  </div>
-</section>
-
-<!-- ============================================================
-     LESSON 1: It's not the prompt, it's the context
-     ============================================================ -->
-<section class="parallax-section section-pad" id="lesson-1">
+<!-- ===== SECTION 1.2 — THE PROBLEM: CREATIVE FRAGMENTATION ===== -->
+<section class="parallax-section section-pad" id="problem">
   <div class="parallax-bg" data-speed="0.2">
-    <div class="orb orb--cyan" style="width: 350px; height: 350px; top: 10%; right: -5%; opacity: 0.12;"></div>
-  </div>
-
-  <div class="parallax-content container-narrow">
-    <div style="text-align: center;">
-      <div class="lesson-number lesson-number--cyan reveal">1</div>
-      <h2 class="h2 section-title reveal reveal-delay-1">It's not the prompt that matters — it's the context.</h2>
-    </div>
-
-    <div class="narrative reveal reveal-delay-2" style="margin-top: var(--space-lg);">
-      <p>Everyone talks about "prompt engineering" — the idea that if you phrase your request just right, the AI will give you a perfect answer. It's not wrong, exactly. A well-written prompt helps. But it's focused on the wrong thing.</p>
-      <p>What actually determines the quality of AI output isn't the last message you sent. It's <strong>everything the AI can see</strong> when it reads your conversation — the full context. That includes: any custom instructions or system prompt you've set up, every message you've sent, every response the AI has given, every file or data you've pasted in, and the order it all appears.</p>
-      <p>The AI doesn't just read your latest message and respond. It re-reads the <em>entire</em> conversation from top to bottom, every single time. Your latest message matters, but it's one input among many. The AI's understanding of who you are, what you're working on, what tone you prefer, what you've already tried — all of that comes from context, not from any single prompt.</p>
-      <p><strong>This is why two people can send the exact same message to the AI and get completely different results.</strong> The difference is what came before.</p>
-    </div>
-
-    <div class="callout reveal" style="margin-top: var(--space-lg); max-width: var(--width-narrow); margin-left: auto; margin-right: auto;">
-      <strong>The practical shift:</strong> Stop obsessing over how to phrase the perfect question. Start thinking about what the AI knows about you and your task <em>before</em> you ask it anything. That's context. And it matters more than any prompt trick.
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     LESSON 2: Context overflow — Parallax Hero Moment
-     ============================================================ -->
-<section class="parallax-section section-pad-lg" id="lesson-2">
-  <div class="parallax-bg" data-speed="0.3">
-    <div class="orb orb--coral" style="width: 500px; height: 500px; bottom: -15%; left: -10%; opacity: 0.12;"></div>
-    <div class="orb orb--gold" style="width: 250px; height: 250px; top: 5%; right: 10%; opacity: 0.08;"></div>
-    <div class="geo geo--ring" style="width: 200px; height: 200px; top: 15%; left: 5%; opacity: 0.03; border-color: var(--coral);"></div>
+    <div class="orb orb--coral" style="width: 400px; height: 400px; top: -10%; right: -10%; opacity: 0.1;"></div>
+    <div class="orb orb--gold" style="width: 200px; height: 200px; bottom: 10%; left: 5%; opacity: 0.06;"></div>
   </div>
 
   <div class="parallax-content container">
     <div style="text-align: center;">
-      <div class="lesson-number lesson-number--coral reveal">2</div>
-      <h2 class="h2 section-title reveal reveal-delay-1">Context overflow is why your AI gets dumb.</h2>
+      <span class="section-label section-label--coral reveal">The Problem</span>
+      <h2 class="h1 section-title reveal reveal-delay-1">Creative is king. But Meta hides the data.</h2>
     </div>
 
     <div class="narrative reveal reveal-delay-2" style="margin-top: var(--space-lg);">
-      <p>Everyone has had the experience: a conversation with AI starts great — sharp, focused, on-point answers — and then gradually gets worse. By message 15 or 20, it's repeating itself, contradicting things it said earlier, or giving vague answers to specific questions. Most people assume the AI "got tired" or "isn't that smart." <strong>Neither is true.</strong></p>
-      <p>What happened is <em>context degradation</em> — sometimes called "context rot."</p>
-      <p>Every AI has a finite amount of text it can hold in working memory at once — the context window. Think of it as a container. Every message, every response, every pasted document goes into this container. And here's what most people don't realize: the AI's performance starts degrading well before the container is full. Research from Chroma (2025) showed that accuracy drops significantly as context grows — even with plenty of room left. Stanford's "Lost in the Middle" study found that information placed in the middle of long contexts gets the least attention, while the beginning and end get the most.</p>
-      <p>Watch what happens as a conversation grows:</p>
+      <p>Creative has become the single most important lever in Meta ad performance. The algorithm optimizes for engagement, and engagement lives in the creative. But here's the problem: Meta's reporting structure makes creative performance nearly invisible — because Meta reports on a <strong>media buying</strong> basis, not a creative basis.</p>
+      <p>This creates fragmentation in <strong>two directions:</strong></p>
     </div>
 
-    <!-- Context Window Animation — Hero Moment -->
-    <div class="context-panels reveal reveal-delay-3">
-      <!-- Panel 1: Early -->
-      <div class="context-column">
-        <div class="context-phase">Early chat</div>
-        <div class="context-panel" id="ctxPanel1">
-          <div class="context-header">Your setup & intent</div>
-          <div class="context-body">
-            <div class="context-token context-token--setup" style="width: 92%;"></div>
-            <div class="context-token context-token--setup" style="width: 78%;"></div>
-            <div class="context-token" style="width: 70%;"></div>
-            <div class="context-token" style="width: 55%;"></div>
-            <div class="context-token" style="width: 40%;"></div>
-          </div>
-          <div class="context-label">
-            <div style="font-size: 11px; color: rgba(255,255,255,0.3);">Context window</div>
-            <div class="context-label--ok">All good ✓</div>
-          </div>
+    <div class="two-col reveal" style="margin-top: var(--space-md); max-width: var(--width-narrow); margin-left: auto; margin-right: auto;">
+      <div class="callout">
+        <strong>Same file, different line items.</strong> Place the exact same JPG across a geo split test, for account creation vs. first transfers, or when relaunching a campaign — Meta creates a new line item for each. The same creative appears in 5+ rows with no connection between them.
+      </div>
+      <div class="callout callout--coral">
+        <strong>Same concept, different files.</strong> The creative <em>idea</em> is identical but the files differ: a price comparison ad updated for compliance, the same ad in English vs. Spanish, the same concept localized for Mexico, Colombia, Guatemala with different currencies. Meta treats these as completely unrelated assets.
+      </div>
+    </div>
+
+    <!-- Real example: Podium ads — same concept, different files -->
+    <div class="podium-example reveal" style="margin-top: var(--space-lg);">
+      <div class="podium-pair">
+        <div class="podium-ad">
+          <img src="images/podium-mexico.jpg" alt="Pangea vs Xoom price comparison ad for Mexico — 18.40 MXN vs 17.62 MXN" loading="lazy">
+          <div class="podium-tag podium-tag--cyan">Mexico &middot; vs Xoom &middot; MXN</div>
         </div>
-        <p class="caption" style="color: rgba(255,255,255,0.4); text-align: center; max-width: 280px;">The setup is clear. Everything the AI needs is <strong style="color: var(--green);">front and center</strong>.</p>
-      </div>
-
-      <!-- Panel 2: Getting long -->
-      <div class="context-column">
-        <div class="context-phase">Getting long</div>
-        <div class="context-panel context-panel--warning" id="ctxPanel2">
-          <div class="context-header">Your setup & intent</div>
-          <div class="context-body">
-            <div class="context-token context-token--setup" style="width: 92%;"></div>
-            <div class="context-token context-token--setup" style="width: 78%;"></div>
-            <div class="context-token" style="width: 88%;"></div>
-            <div class="context-token" style="width: 65%;"></div>
-            <div class="context-token" style="width: 82%;"></div>
-            <div class="context-token" style="width: 74%;"></div>
-            <div class="context-token" style="width: 90%;"></div>
-            <div class="context-token" style="width: 58%;"></div>
-            <div class="context-token" style="width: 80%;"></div>
-            <div class="context-token" style="width: 70%;"></div>
-            <div class="context-token" style="width: 86%;"></div>
-            <div class="context-token" style="width: 62%;"></div>
-          </div>
-          <div class="context-label">
-            <div style="font-size: 11px; color: rgba(255,255,255,0.3);">Context window</div>
-            <div class="context-label--warning">Filling up...</div>
-          </div>
+        <div class="podium-ad">
+          <img src="images/podium-colombia.jpg" alt="Pangea vs Remitly price comparison ad for Colombia — 3943.50 COP vs 3921.54 COP" loading="lazy">
+          <div class="podium-tag podium-tag--coral">Colombia &middot; vs Remitly &middot; COP</div>
         </div>
-        <p class="caption" style="color: rgba(255,255,255,0.4); text-align: center; max-width: 280px;">A dozen exchanges in. The original setup is still there, but it's <strong style="color: var(--gold);">getting crowded</strong>.</p>
       </div>
-
-      <!-- Panel 3: Overflow -->
-      <div class="context-column">
-        <div class="context-phase context-phase--danger">Overflow</div>
-        <div class="context-panel context-panel--overflow" id="ctxPanel3">
-          <div class="context-header">Your setup & intent</div>
-          <div class="context-body">
-            <div class="context-token" style="width: 92%;"></div>
-            <div class="context-token" style="width: 78%;"></div>
-            <div class="context-token" style="width: 85%;"></div>
-            <div class="context-token" style="width: 68%;"></div>
-            <div class="context-token" style="width: 90%;"></div>
-            <div class="context-token" style="width: 74%;"></div>
-            <div class="context-token" style="width: 82%;"></div>
-            <div class="context-token" style="width: 60%;"></div>
-            <div class="context-token" style="width: 88%;"></div>
-            <div class="context-token" style="width: 72%;"></div>
-            <div class="context-token" style="width: 95%;"></div>
-            <div class="context-token" style="width: 66%;"></div>
-            <div class="context-token" style="width: 80%;"></div>
-            <div class="context-token" style="width: 58%;"></div>
-            <div class="context-token" style="width: 86%;"></div>
-          </div>
-          <div class="context-label">
-            <div style="font-size: 11px; color: rgba(255,255,255,0.3);">Context window</div>
-            <div class="context-label--danger">Setup is gone. AI is lost.</div>
-          </div>
-        </div>
-        <p class="caption" style="color: rgba(255,255,255,0.4); text-align: center; max-width: 280px;">The conversation outgrew the window. The original instructions — <strong style="color: var(--coral);">the part that defined the task</strong> — got pushed out.</p>
-      </div>
-    </div>
-
-    <div class="narrative reveal" style="margin-top: var(--space-lg);">
-      <p>This creates a specific, predictable problem. Most people spend real time thinking through their first message — setting up the task, providing context, defining what they need. That opening prompt is the highest-quality input in the entire conversation. But everything that follows is reactive tinkering: <em>"no, change this," "make it more X," "actually go back to the other version."</em> As the conversation fills with these low-effort iterative messages, the carefully constructed beginning gets pushed farther and farther from the end — where the AI is paying the most attention. The signal-to-noise ratio degrades with every exchange.</p>
-    </div>
-
-    <div class="callout callout--coral reveal" style="margin-top: var(--space-lg); max-width: var(--width-narrow); margin-left: auto; margin-right: auto;">
-      <strong>The AI isn't getting dumber.</strong> The thoughtful setup that made it smart is getting drowned out by the noise of refinement. Once you understand this, a lot of "AI is bad at X" complaints turn into "my context got noisy." Long conversations aren't just less efficient — they're actively degrading the AI's ability to help you. This is a mechanical reality, not a quality problem.
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     LESSON 3: Beginning and end matter most
-     ============================================================ -->
-<section class="parallax-section section-pad" id="lesson-3">
-  <div class="parallax-bg" data-speed="0.2">
-    <div class="orb orb--green" style="width: 400px; height: 400px; top: -5%; left: -10%; opacity: 0.1;"></div>
-  </div>
-
-  <div class="parallax-content container-narrow">
-    <div style="text-align: center;">
-      <div class="lesson-number lesson-number--green reveal">3</div>
-      <h2 class="h2 section-title reveal reveal-delay-1">AI cares most about the beginning and the end — so make good use of your Custom Instructions.</h2>
-    </div>
-
-    <div class="narrative reveal reveal-delay-2" style="margin-top: var(--space-lg);">
-      <p>Here's where Lessons 1 and 2 come together.</p>
-      <p>The AI pays the most attention to two parts of every conversation: <strong>the very beginning</strong> and <strong>the very end</strong>. The beginning is where Custom Instructions live — the persistent setup that tells the AI who you are and how to behave. The end is the latest message — the thing you just asked for. The middle of the conversation — all the back-and-forth exchanges — fades in importance as it grows. (This is the "Lost in the Middle" effect, confirmed by Stanford research in 2024.)</p>
-      <p>The good news: most AI tools protect your Custom Instructions from being deleted during long conversations. They stay in place. The bad news: their <em>influence weakens</em> as more content piles up between them and the AI's latest response. The instructions are still there — the AI just pays less attention to them as the conversation grows noisier (Lesson 2).</p>
-      <p>And here's the other half of it: your first message — the one where you actually thought through what you needed — is the most vulnerable. Everything after it is tinkering: "change this," "make it shorter," "go back to the other version." Those reactive messages pile up, and the carefully crafted opening gets pushed into the middle of the conversation, exactly where the AI pays the least attention. <strong>The most thoughtful input you gave gets buried by the least thoughtful.</strong></p>
-      <p>Most people have never set up their Custom Instructions in ChatGPT, or don't know that Claude has equivalent features. They're leaving the most protected, most influential real estate in every conversation completely blank.</p>
-      <p>This is why the three tips below all involve being intentional about what goes into the context, especially at the beginning. Custom Instructions aren't an advanced feature. <strong>They're the single most useful thing most people aren't using.</strong></p>
-    </div>
-
-    <div class="callout callout--green reveal" style="margin-top: var(--space-lg); max-width: var(--width-narrow); margin-left: auto; margin-right: auto;">
-      <strong>Set it up now:</strong> In ChatGPT, go to Settings → Personalization → Custom Instructions. In Claude, click your initials in the lower left to set Profile Preferences, or create a Project and add Project Instructions for more control. Tell the AI who you are, what you do, and how you like to work. That one setup will improve every conversation you have from now on.
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     TRANSITION: 3 Tips
-     ============================================================ -->
-<section class="parallax-section section-pad" id="tips-intro">
-  <div class="parallax-bg" data-speed="0.25">
-    <div class="orb orb--cyan" style="width: 300px; height: 300px; bottom: 0; right: -5%; opacity: 0.08;"></div>
-    <div class="orb orb--coral" style="width: 200px; height: 200px; top: 10%; left: 15%; opacity: 0.06;"></div>
-  </div>
-
-  <div class="parallax-content container" style="text-align: center;">
-    <div class="section-divider reveal" style="margin-bottom: var(--space-lg);"></div>
-    <h2 class="h1 reveal reveal-delay-1">Now — three tips for working with it.</h2>
-    <p class="section-lead reveal reveal-delay-2">Context is everything, overflow kills it, and the bookends matter most. Here's how to work with these realities instead of against them.</p>
-  </div>
-</section>
-
-<!-- ============================================================
-     TIP 1: Develop Your Own Shared Language
-     ============================================================ -->
-<section class="parallax-section section-pad" id="tip-1">
-  <div class="parallax-bg" data-speed="0.2">
-    <div class="orb orb--cyan" style="width: 450px; height: 450px; top: -10%; right: -10%; opacity: 0.1;"></div>
-    <div class="orb orb--blue" style="width: 200px; height: 200px; bottom: 20%; left: 5%; opacity: 0.06;"></div>
-  </div>
-
-  <div class="parallax-content container-narrow">
-    <div class="tip-header reveal">
-      <div class="tip-badge tip-badge--1">1</div>
-      <div>
-        <div class="overline" style="color: var(--cyan); margin-bottom: 4px;">Tip One</div>
-        <h2 class="h2">Develop Your Own Shared Language with the AI</h2>
-      </div>
-    </div>
-
-    <div class="narrative reveal reveal-delay-1">
-      <p><strong>Core idea:</strong> Shared language — metaphors, analogies, and mental models — between human and AI. Not "prompt engineering." A living vocabulary that both sides use to communicate, teach, and reason together.</p>
+      <p class="podium-caption">Same concept. Different country, competitor, currency, slang. Meta sees two unrelated assets.</p>
     </div>
 
     <div class="narrative reveal" style="margin-top: var(--space-md);">
-      <p><strong>How it connects:</strong> If context is what matters (Lesson 1), then shared language is a way to pack more meaning into less of it. A single metaphor — "you're chasing squirrels" — communicates in five words what would take a paragraph of technical instruction. And since context is finite (Lesson 2), that efficiency adds up. When you find the metaphors and shorthand that work, those go into your Custom Instructions (Lesson 3) — so the AI starts every conversation already speaking your language.</p>
+      <p>You need both views. Roll up to the <strong>concept level</strong> — "How is the Podium concept performing across the board?" — AND slice into the <strong>metadata</strong> — "Podium works in Mexico but not Colombia." Meta gives you the second view, badly fragmented. The first view doesn't exist.</p>
+      <p>The result: an <strong>incomplete picture</strong> that's <strong>painfully slow</strong> to assemble.</p>
     </div>
 
-    <!-- Case Study: Dug/Squirrel -->
-    <div class="case-study reveal">
-      <div class="case-study-accent case-study-accent--cyan"></div>
-      <div class="case-study-body">
-        <div class="case-study-label">Case Study</div>
-        <h3 class="h3" style="margin-bottom: var(--space-md);">Dug the Dog</h3>
-
-        <div class="narrative" style="margin: 0;">
-          <p>The AI was drifting off-task — scope creeping, chasing tangents, losing the thread. Rather than writing a technical correction, Jose typed:</p>
+    <!-- Facebook Ads Manager Mock — same creative scattered across 5 campaigns -->
+    <div class="fb-manager reveal" style="margin-top: var(--space-lg);">
+      <div class="fb-toolbar">
+        <div class="fb-toolbar-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Ads Manager</span>
         </div>
-
-        <blockquote>
-          "Sometimes working with you is like walking Dug the dog from UP, without a leash: everything's fine until you see a squirrel and you just run off. And right now you're seeing squirrels everywhere."
-        </blockquote>
-
-        <div class="narrative" style="margin: 0;">
-          <p>The AI immediately understood three things at once:</p>
-          <p>1. <strong>The technical problem</strong> — scope drift, losing focus on the original task<br>
-          2. <strong>The emotional state</strong> — frustration was high, not just mild annoyance<br>
-          3. <strong>The desired correction</strong> — stop, step back, take a broader look at the problem</p>
-          <p>It did all three. A technical instruction like "please stay focused on the original scope" would have addressed #1 at best. The metaphor carried the full payload.</p>
-          <p>The Squirrel worked well enough as a one-off that it became codified — a built-in skill, a plugin in the AI development environment. Now, instead of re-explaining the concept, it's as simple as saying <em>"Squirrel: that feature isn't working like we talked about"</em> — and the AI escalates beyond a typical debug. It doesn't just patch the immediate symptom — it steps back, re-reads the broader context, and addresses the root cause. The word "Squirrel" triggers a specific behavioral protocol, not just a vague instruction.</p>
-        </div>
-
-        <div class="callout" style="margin-top: var(--space-md);">
-          <strong>The principle:</strong> Evocative language carries more signal than technical direction. A single metaphor can communicate problem, emotion, and desired action at the same time.
+        <div class="fb-toolbar-right">
+          <span class="fb-tab fb-tab--active">All</span>
+          <span class="fb-tab">Active</span>
         </div>
       </div>
-    </div>
 
-    <!-- ELI5 + Everyday Tips — Progressive Reveal -->
-    <div class="expandable reveal" style="text-align: center;">
-      <button class="expand-trigger" onclick="toggleExpand(this)">
-        Everyday tips for this <span class="arrow">▼</span>
-      </button>
-      <div class="expand-content">
-        <div class="expand-inner narrative" style="text-align: left;">
-          <p><strong>When the AI drifts, describe the drift.</strong> Instead of "That's not what I asked for," try: "You're going down a rabbit hole. Come back to the main thing." The AI responds better to a description of the behavior than a flat correction.</p>
-          <p><strong>Ask the AI to explain hard things using something you already know.</strong> "Explain ROI attribution like a relay race." "Explain this formula like a recipe." You'll understand faster, and the AI gives you a framework you can actually use — not just a definition you'll forget.</p>
-          <p><strong>Build a go-to phrase for when you're frustrated.</strong> "You're off the rails." "We're going in circles." "Squirrel." Use it consistently within a conversation and the AI picks up your shorthand fast.</p>
+      <!-- Campaign 1 -->
+      <div class="fb-tree-campaign">
+        <div class="fb-tree-row fb-tree-row--campaign">
+          <div class="fb-tree-caret">&#9660;</div>
+          <div class="fb-tree-icon fb-tree-icon--campaign"></div>
+          <div class="fb-tree-name">MX-Installs-Jan</div>
+          <div class="fb-tree-metrics"><span>$8,300</span><span>410K</span><span>2.8%</span></div>
+        </div>
+        <div class="fb-tree-adset">
+          <div class="fb-tree-row fb-tree-row--adset">
+            <div class="fb-tree-caret">&#9660;</div>
+            <div class="fb-tree-icon fb-tree-icon--adset"></div>
+            <div class="fb-tree-name">18-35 / Mexico</div>
+            <div class="fb-tree-metrics"><span>$5,200</span><span>268K</span><span>3.1%</span></div>
+          </div>
+          <div class="fb-tree-ad fb-tree-ad--hero">
+            <div class="fb-thumb fb-thumb--hero"></div>
+            <div class="fb-tree-name">Podium — MX vs Xoom</div>
+            <div class="fb-tree-metrics"><span>$3,200</span><span>142K</span><span>3.41%</span></div>
+          </div>
+          <div class="fb-tree-ad">
+            <div class="fb-thumb"></div>
+            <div class="fb-tree-name">Referral $10 Bonus — Static</div>
+            <div class="fb-tree-metrics"><span>$2,000</span><span>126K</span><span>2.6%</span></div>
+          </div>
+        </div>
+        <div class="fb-tree-adset">
+          <div class="fb-tree-row fb-tree-row--adset">
+            <div class="fb-tree-caret">&#9654;</div>
+            <div class="fb-tree-icon fb-tree-icon--adset"></div>
+            <div class="fb-tree-name">35-55 / Mexico</div>
+            <div class="fb-tree-metrics"><span>$3,100</span><span>142K</span><span>2.4%</span></div>
+          </div>
         </div>
       </div>
-    </div>
+
+      <!-- Campaign 2 -->
+      <div class="fb-tree-campaign">
+        <div class="fb-tree-row fb-tree-row--campaign">
+          <div class="fb-tree-caret">&#9660;</div>
+          <div class="fb-tree-icon fb-tree-icon--campaign"></div>
+          <div class="fb-tree-name">MX-Brand-Q1</div>
+          <div class="fb-tree-metrics"><span>$12,400</span><span>680K</span><span>2.5%</span></div>
+        </div>
+        <div class="fb-tree-adset">
+          <div class="fb-tree-row fb-tree-row--adset">
+            <div class="fb-tree-caret">&#9660;</div>
+            <div class="fb-tree-icon fb-tree-icon--adset"></div>
+            <div class="fb-tree-name">Broad / Mexico</div>
+            <div class="fb-tree-metrics"><span>$9,900</span><span>538K</span><span>2.7%</span></div>
+          </div>
+          <div class="fb-tree-ad fb-tree-ad--hero">
+            <div class="fb-thumb fb-thumb--hero"></div>
+            <div class="fb-tree-name">Podium — MX vs Xoom</div>
+            <div class="fb-tree-metrics"><span>$4,800</span><span>198K</span><span>3.40%</span></div>
+          </div>
+          <div class="fb-tree-ad">
+            <div class="fb-thumb fb-thumb--hero"></div>
+            <div class="fb-tree-name">Podium — MX vs Remitly</div>
+            <div class="fb-tree-metrics"><span>$5,100</span><span>340K</span><span>2.12%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campaign 3 -->
+      <div class="fb-tree-campaign">
+        <div class="fb-tree-row fb-tree-row--campaign">
+          <div class="fb-tree-caret">&#9660;</div>
+          <div class="fb-tree-icon fb-tree-icon--campaign"></div>
+          <div class="fb-tree-name">CO-Lookalike-Feb</div>
+          <div class="fb-tree-metrics"><span>$3,500</span><span>157K</span><span>3.2%</span></div>
+        </div>
+        <div class="fb-tree-adset">
+          <div class="fb-tree-row fb-tree-row--adset">
+            <div class="fb-tree-caret">&#9660;</div>
+            <div class="fb-tree-icon fb-tree-icon--adset"></div>
+            <div class="fb-tree-name">Lookalike 1% / Colombia</div>
+            <div class="fb-tree-metrics"><span>$3,500</span><span>157K</span><span>3.2%</span></div>
+          </div>
+          <div class="fb-tree-ad fb-tree-ad--hero">
+            <div class="fb-thumb fb-thumb--hero"></div>
+            <div class="fb-tree-name">Podium — MX vs Xoom</div>
+            <div class="fb-tree-metrics"><span>$2,100</span><span>89K</span><span>3.40%</span></div>
+          </div>
+          <div class="fb-tree-ad">
+            <div class="fb-thumb fb-thumb--podium-co"></div>
+            <div class="fb-tree-name">Podium — CO vs Remitly</div>
+            <div class="fb-tree-metrics"><span>$1,400</span><span>68K</span><span>3.09%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campaign 4 -->
+      <div class="fb-tree-campaign">
+        <div class="fb-tree-row fb-tree-row--campaign">
+          <div class="fb-tree-caret">&#9660;</div>
+          <div class="fb-tree-icon fb-tree-icon--campaign"></div>
+          <div class="fb-tree-name">MX-Retarget-Q1</div>
+          <div class="fb-tree-metrics"><span>$9,800</span><span>525K</span><span>2.3%</span></div>
+        </div>
+        <div class="fb-tree-adset">
+          <div class="fb-tree-row fb-tree-row--adset">
+            <div class="fb-tree-caret">&#9660;</div>
+            <div class="fb-tree-icon fb-tree-icon--adset"></div>
+            <div class="fb-tree-name">Retarget / All Visitors</div>
+            <div class="fb-tree-metrics"><span>$9,800</span><span>525K</span><span>2.3%</span></div>
+          </div>
+          <div class="fb-tree-ad fb-tree-ad--hero">
+            <div class="fb-thumb fb-thumb--hero"></div>
+            <div class="fb-tree-name">Podium — MX vs Xoom</div>
+            <div class="fb-tree-metrics"><span>$5,600</span><span>245K</span><span>3.41%</span></div>
+          </div>
+          <div class="fb-tree-ad">
+            <div class="fb-thumb"></div>
+            <div class="fb-tree-name">Zero Fees — EN Static</div>
+            <div class="fb-tree-metrics"><span>$4,200</span><span>280K</span><span>1.36%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campaign 5 -->
+      <div class="fb-tree-campaign">
+        <div class="fb-tree-row fb-tree-row--campaign">
+          <div class="fb-tree-caret">&#9660;</div>
+          <div class="fb-tree-icon fb-tree-icon--campaign"></div>
+          <div class="fb-tree-name">GT-Install-Mar</div>
+          <div class="fb-tree-metrics"><span>$6,400</span><span>341K</span><span>2.5%</span></div>
+        </div>
+        <div class="fb-tree-adset">
+          <div class="fb-tree-row fb-tree-row--adset">
+            <div class="fb-tree-caret">&#9660;</div>
+            <div class="fb-tree-icon fb-tree-icon--adset"></div>
+            <div class="fb-tree-name">18-45 / Guatemala</div>
+            <div class="fb-tree-metrics"><span>$6,400</span><span>341K</span><span>2.5%</span></div>
+          </div>
+          <div class="fb-tree-ad fb-tree-ad--hero">
+            <div class="fb-thumb fb-thumb--hero"></div>
+            <div class="fb-tree-name">Podium — MX vs Xoom</div>
+            <div class="fb-tree-metrics"><span>$2,800</span><span>146K</span><span>3.46%</span></div>
+          </div>
+          <div class="fb-tree-ad">
+            <div class="fb-thumb"></div>
+            <div class="fb-tree-name">Holiday Promo — Video ES</div>
+            <div class="fb-tree-metrics"><span>$3,600</span><span>195K</span><span>1.80%</span></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /fb-manager -->
   </div>
 </section>
 
-<!-- ============================================================
-     TIP 2: Don't Leash It, Fence It
-     ============================================================ -->
-<section class="parallax-section section-pad" id="tip-2">
-  <div class="parallax-bg" data-speed="0.2">
-    <div class="orb orb--coral" style="width: 400px; height: 400px; bottom: -10%; left: -10%; opacity: 0.1;"></div>
-    <div class="orb orb--gold" style="width: 250px; height: 250px; top: 5%; right: -5%; opacity: 0.06;"></div>
-  </div>
-
-  <div class="parallax-content container-narrow">
-    <div class="tip-header reveal">
-      <div class="tip-badge tip-badge--2">2</div>
-      <div>
-        <div class="overline" style="color: var(--coral); margin-bottom: 4px;">Tip Two</div>
-        <h2 class="h2">Don't Leash It, Fence It</h2>
-      </div>
-    </div>
-
-    <div class="narrative reveal reveal-delay-1">
-      <p><strong>Core idea:</strong> Systematic constraints on the AI, built around the fact that you don't know what you don't know. You can't review what you can't evaluate — so you build a process where other AIs do adversarial review of the work, and you mediate the findings.</p>
-    </div>
-
-    <div class="narrative reveal" style="margin-top: var(--space-md);">
-      <p><strong>How it connects:</strong> Shared language (Tip 1) made context efficient. Fences make it clean. Instead of letting the AI wander into irrelevant territory — burning through your finite context window with noise — fences keep it working within bounds where the conversation stays focused and the context stays healthy. And the best fences live in your Custom Instructions, right at the top, where they shape every conversation from the start. "When I say 'Sacred Code,' stop and verify before changing anything" — that's a fence that sits in the most protected space you have.</p>
-    </div>
-
-    <div class="narrative reveal">
-      <p>Most people's first instinct with AI is to <strong>leash</strong> it — give it very specific, step-by-step instructions. "Do exactly this, then exactly that." A leash works when you know exactly where the AI needs to go. You're in control, the path is clear, and you're just using the AI as a faster pair of hands.</p>
-      <p>But if you <em>don't</em> know where it needs to go — if you're exploring, building something new, or working outside your expertise — a leash is the wrong tool. You can't give precise directions to a place you've never been. What you need instead is a fence: let the AI run free, explore, and make creative decisions <em>within bounds that keep it from going somewhere dangerous</em>.</p>
-    </div>
-
-    <!-- Leash vs Fence Visual -->
-    <div class="leash-fence-grid reveal">
-      <div class="comparison-card comparison-card--leash">
-        <div class="comparison-icon">🔗</div>
-        <div class="comparison-label" style="color: var(--coral);">A leash says:</div>
-        <div class="comparison-desc">"Go here." Step-by-step. You control every move.</div>
-      </div>
-      <div class="comparison-card comparison-card--fence">
-        <div class="comparison-icon">🏗️</div>
-        <div class="comparison-label" style="color: var(--green);">A fence says:</div>
-        <div class="comparison-desc">"Go anywhere you want, but not past there." Freedom within constraints.</div>
-      </div>
-    </div>
-
-    <div class="narrative reveal">
-      <p>Here's something most people don't realize about coding AIs: <strong>they are built to code.</strong> That's their deepest bias. A coding AI wants to write code, change code, improve code — it's what they're optimized for. This means they will sometimes override even explicit instructions not to change something. A comment that says <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 14px;">// DO NOT MODIFY</code> is fighting against the AI's core drive. The AI has seen millions of "do not modify" comments in its training data — and it has also seen millions of developers modify that code anyway. The comment is noise. The AI will often blow right past it.</p>
-      <p>This is why fences need to be <em>unusual</em> — not just instructions, but friction that actually disrupts the AI's default behavior.</p>
-    </div>
-
-    <!-- Case Study: Sacred Code -->
-    <div class="case-study reveal">
-      <div class="case-study-accent case-study-accent--coral"></div>
-      <div class="case-study-body">
-        <div class="case-study-label">Case Study</div>
-        <h3 class="h3" style="margin-bottom: var(--space-md);">Sacred Code & Pilgrimages</h3>
-
-        <div class="narrative" style="margin: 0;">
-          <p>Jose and the AI started developing a shared vocabulary for how code should be treated:</p>
-          <p>Critical business logic gets labeled <strong>"Sacred Code"</strong> in comments — not <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 14px;">// DO NOT MODIFY</code> or <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 14px;">// IMPORTANT</code>, but language that sounds intentionally dramatic. The AI gets sent on <strong>"pilgrimages"</strong> to review and protect the sacred code — a ritual of re-reading and verifying that nothing has been broken.</p>
-          <p>The result: the AI pays more attention to these markers than to standard code comments. Jose has prevented real problems multiple times because the AI will stop mid-change and say: <em>"I was about to change X, but it says this weird thing in the comments."</em></p>
-          <p><strong>Standard comments get skimmed. Dramatic, non-traditional ones get respected.</strong> The working theory is that because these comments are unusual — they don't pattern-match to the millions of <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 14px;">// TODO</code> and <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 14px;">// FIXME</code> comments in the AI's training data — they stand out. They create friction in the right places.</p>
-          <p>These are fences. The Sacred Code labels don't tell the AI what to do — they tell it where the boundaries are. The pilgrimages don't control the AI's behavior step by step — they create a review ritual that catches problems before they ship. The AI has full creative and technical freedom inside the fence. It just can't wander past the markers without stopping.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Adversarial Review — Progressive Reveal -->
-    <div class="expandable reveal" style="text-align: center;">
-      <button class="expand-trigger" onclick="toggleExpand(this)">
-        The adversarial review pattern <span class="arrow">▼</span>
-      </button>
-      <div class="expand-content">
-        <div class="expand-inner narrative" style="text-align: left;">
-          <p>Jose also built check gates between every step. After the primary AI builds a feature, a separate adversarial AI reviews the work before it's considered done. The adversarial reviewer isn't trying to be helpful — it's trying to find problems.</p>
-          <p><strong>Example: iPhone feature development.</strong> An AI would build an iPhone feature. Before Jose accepted it, an adversarial reviewer AI would examine the code specifically to verify it met Apple's standards — Human Interface Guidelines, accessibility requirements, platform conventions, performance patterns. The reviewer would present findings to Jose, and Jose would mediate: deciding which issues mattered, which were acceptable trade-offs, and which needed to be fixed.</p>
-          <p>The human's role in this process is worth being specific about. Jose isn't reviewing the code directly — he's reviewing the <em>disagreements between AIs</em>. When AI #1 builds something and AI #2 says "this violates Apple's accessibility guidelines," Jose doesn't need to understand the technical details of accessibility implementation. He needs to decide: <strong>is this important? Should we fix it?</strong> The adversarial structure surfaces issues that a non-technical person would never know to look for, and presents them in a format where the human can make judgment calls.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="callout reveal" style="margin-top: var(--space-md); max-width: var(--width-narrow); margin-left: auto; margin-right: auto;">
-      <strong>The principle:</strong> You don't need to become technical to get quality output. You need to build a process that compensates for your blind spots — structured disagreement, with you as the decision-maker. That's a role any professional already knows how to play.
-    </div>
-
-    <!-- Everyday Tips — Progressive Reveal -->
-    <div class="expandable reveal" style="text-align: center; margin-top: var(--space-sm);">
-      <button class="expand-trigger" onclick="toggleExpand(this)">
-        Everyday tips for this <span class="arrow">▼</span>
-      </button>
-      <div class="expand-content">
-        <div class="expand-inner narrative" style="text-align: left;">
-          <p><strong>Give it the boundaries, not the steps.</strong> Instead of prescribing paragraph structure, try: "Write an email about Q4 results. Keep it under 200 words, make it encouraging but honest, and end with a clear next step. Surprise me with the structure."</p>
-          <p><strong>Ask the AI to critique its own work.</strong> After a draft, follow up with: "Now pretend you're my manager and poke holes in this. What's weak?" Lightweight adversarial review — it catches things you wouldn't think to ask about.</p>
-          <p><strong>Ask "what could go wrong?"</strong> Before you send that email or publish that report: "What are three ways this could backfire or be misunderstood?" You're asking the AI to show you the edges of the field.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     TIP 3: Put Yourself in the Loop
-     ============================================================ -->
-<section class="parallax-section section-pad" id="tip-3">
-  <div class="parallax-bg" data-speed="0.2">
-    <div class="orb orb--green" style="width: 450px; height: 450px; top: -10%; left: -10%; opacity: 0.1;"></div>
-    <div class="orb orb--teal" style="width: 200px; height: 200px; bottom: 10%; right: 5%; opacity: 0.06;"></div>
-  </div>
-
-  <div class="parallax-content container-narrow">
-    <div class="tip-header reveal">
-      <div class="tip-badge tip-badge--3">3</div>
-      <div>
-        <div class="overline" style="color: var(--green); margin-bottom: 4px;">Tip Three</div>
-        <h2 class="h2">Put Yourself in the Loop</h2>
-      </div>
-    </div>
-
-    <div class="narrative reveal reveal-delay-1">
-      <p><strong>Core idea:</strong> Think in trade-offs. Build permission gates into every step and every feature so the AI can't just barrel through — it has to stop, present options, and let the human decide.</p>
-    </div>
-
-    <div class="narrative reveal" style="margin-top: var(--space-md);">
-      <p><strong>How it connects:</strong> Every time you make a decision at a gate, you're adding context the AI didn't have before — your reasoning, your preferences, your domain knowledge. The conversation gets richer and more focused instead of longer and more diffuse. And because each decision lands at the bottom of the conversation — where the AI weighs it most heavily — you're continuously giving it the freshest, most relevant signal about what you actually want.</p>
-    </div>
-
-    <div class="narrative reveal">
-      <p>The natural tendency when working with AI is to describe what you want and let it go build it. That works for small, well-understood tasks. But for anything complex, the AI will make dozens of decisions along the way that the human never sees — and some of those decisions will be wrong in ways the human would have caught if they'd been asked.</p>
-      <p>The fix isn't to micromanage. It's to build <strong>gates</strong> into the process — points where the AI has to stop, surface the trade-off it's facing, and get a human decision before continuing. Not "check in with me when you're done." More like: "At every decision point, show me the options and let me pick."</p>
-    </div>
-
-    <!-- Case Study: Airport -->
-    <div class="case-study reveal">
-      <div class="case-study-accent case-study-accent--green"></div>
-      <div class="case-study-body">
-        <div class="case-study-label">Case Study</div>
-        <h3 class="h3" style="margin-bottom: var(--space-md);">The Airport</h3>
-
-        <div class="narrative" style="margin: 0;">
-          <p>While building the Pangea Marketing Suite, Jose needed to sync thousands of ad records from Meta's advertising API — pulled daily, processed efficiently, without exceeding Meta's rate limits or timing out. He knew what rate limiting was — he'd already built a working version in a prior iteration. But it was painfully slow. His solution had been to build in long delays between requests to avoid getting rate-limited, which meant a full month of data took around 5 minutes to sync. It worked, but it was brute force. He didn't know Swift concurrency patterns or how to make it faster without hitting the limits.</p>
-          <p>The gates were there — the AI kept stopping and presenting trade-off decisions (batch size, retry strategy, error handling). The fences were working. But Jose kept making the wrong call because his mental model of how syncing should work was off.</p>
-          <p>He was thinking of syncing like downloading — request everything, get everything, done. So when the AI asked "should we batch in groups of 50 or 500?" he'd pick 500 because bigger seemed more efficient. Wrong. That's what caused the timeouts and rate limits.</p>
-          <p>The wall broke when the AI explained the problem using a metaphor:</p>
-        </div>
-
-        <blockquote>
-          "Think of ads as passengers at an airport picking up their luggage."
-        </blockquote>
-
-        <div class="narrative" style="margin: 0;">
-          <p>Through that frame, every technical concept became intuitive:</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); margin: var(--space-md) 0;">
-          <div class="card" style="padding: var(--space-sm) var(--space-md);">
-            <div class="caption" style="color: var(--cyan); font-weight: 700;">Rate limits</div>
-            <div class="caption" style="color: rgba(255,255,255,0.5);">Too many passengers rushing the carousel at once</div>
-          </div>
-          <div class="card" style="padding: var(--space-sm) var(--space-md);">
-            <div class="caption" style="color: var(--cyan); font-weight: 700;">Batching</div>
-            <div class="caption" style="color: rgba(255,255,255,0.5);">Staggering flight arrivals so the carousel isn't overwhelmed</div>
-          </div>
-          <div class="card" style="padding: var(--space-sm) var(--space-md);">
-            <div class="caption" style="color: var(--cyan); font-weight: 700;">Caching</div>
-            <div class="caption" style="color: rgba(255,255,255,0.5);">Pre-sorting luggage before passengers arrive</div>
-          </div>
-          <div class="card" style="padding: var(--space-sm) var(--space-md);">
-            <div class="caption" style="color: var(--cyan); font-weight: 700;">Timeouts</div>
-            <div class="caption" style="color: rgba(255,255,255,0.5);">Passengers waiting too long and leaving</div>
-          </div>
-        </div>
-
-        <div class="narrative" style="margin: 0;">
-          <p>Jose could now make architectural trade-off decisions that were natural to him. Should passengers pick up their luggage all at once, or go home and come back? He didn't need to learn the jargon — the metaphor gave him a mental model he could reason with, and the reasoning produced working code.</p>
-          <p>Once concurrency was explained through the airport frame, they built a function that synced <strong>an entire month of data in 30 seconds</strong> — down from around 5 minutes. Same API, same rate limits, but a fundamentally different approach that Jose could reason about because the concepts were framed in familiar language.</p>
-        </div>
-
-        <div class="callout" style="margin-top: var(--space-md);">
-          <strong>What this story shows about gates:</strong> The gates were doing their job — surfacing the right questions. The problem was that Jose's mental model was wrong, so he kept making the wrong choice at each gate. It wasn't until a shared metaphor (Tip 1) corrected his intuition that the trade-off decisions became natural. The gates didn't need to get smarter. The human needed the right mental model. And once he had it, every gate after that worked.
-        </div>
-
-        <div class="callout" style="margin-top: var(--space-md);">
-          <strong>The principle:</strong> Put yourself in the loop not just to catch errors, but to learn. Every trade-off the AI surfaces is a chance to build intuition. And when your intuition is wrong, that's when Tip 1 kicks in to correct it. The tips work together.
-        </div>
-      </div>
-    </div>
-
-    <!-- ELI5 + Everyday Tips — Progressive Reveal -->
-    <div class="expandable reveal" style="text-align: center;">
-      <button class="expand-trigger" onclick="toggleExpand(this)">
-        Everyday tips for this <span class="arrow">▼</span>
-      </button>
-      <div class="expand-content">
-        <div class="expand-inner narrative" style="text-align: left;">
-          <p><strong>Start big tasks with "show me your plan first."</strong> Before the AI writes anything final, ask it to outline its approach. "I need a presentation about Q4 results. Before you build it, show me what slides you'd include and why." You catch bad assumptions in 10 seconds instead of reading a 20-slide deck you don't like.</p>
-          <p><strong>Ask "what are you assuming?" before you accept the output.</strong> The AI always makes assumptions — about your audience, your tone, your goals. It just doesn't tell you unless you ask. After any substantial output, try: "What assumptions did you make here?" You'll be surprised how often it assumed something wrong, and how easy it is to correct when you catch it early.</p>
-          <p><strong>Turn one-shot requests into two-step conversations.</strong> Instead of "Write me a campaign brief," try: "I need a campaign brief. First, ask me 5 questions that would help you write a great one." This flips the dynamic — the AI interviews <em>you</em> before it starts working. You end up with better output because the AI actually knows what you need, and you stay in the loop from the very first step.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     FURTHER READING
-     ============================================================ -->
-<section class="parallax-section section-pad" id="further-reading">
+<!-- ===== SECTION 1.3 — THE OLD WAY: CSV + PIVOT TABLES ===== -->
+<section class="parallax-section section-pad" id="old-way">
   <div class="parallax-bg" data-speed="0.15">
-    <div class="orb orb--cyan" style="width: 300px; height: 300px; top: -5%; left: -5%; opacity: 0.06;"></div>
-    <div class="orb orb--coral" style="width: 200px; height: 200px; bottom: 10%; right: 10%; opacity: 0.04;"></div>
+    <div class="orb orb--gold" style="width: 350px; height: 350px; top: 5%; left: -10%; opacity: 0.08;"></div>
   </div>
 
   <div class="parallax-content container">
     <div style="text-align: center;">
-      <div class="section-divider reveal" style="margin-bottom: var(--space-lg);"></div>
-      <h2 class="h1 section-title reveal reveal-delay-1">Further Reading</h2>
-      <p class="section-lead reveal reveal-delay-2">These ideas came from practice. But other people arrived at similar conclusions through different paths.</p>
+      <span class="section-label section-label--gold reveal">The Hack</span>
+      <h2 class="h1 section-title reveal reveal-delay-1">Download everything. Pivot on ad name.</h2>
     </div>
 
-    <div style="display: grid; gap: var(--space-sm); margin-top: var(--space-lg); max-width: 900px; margin-left: auto; margin-right: auto;">
+    <div class="narrative reveal reveal-delay-2" style="margin-top: var(--space-lg);">
+      <p>The workaround everyone uses: export the raw data from Ads Manager, bring it into Excel, and pivot on ad name. Five campaign rows collapse into one creative row. You finally see aggregated numbers — total spend, total impressions, true CTR.</p>
+      <p>It works. But it's hours of manual VLOOKUP and pivot table work. And the data is already stale by the time you finish. Do this for every creative, every week, and you've built a full-time job that produces yesterday's insights.</p>
+    </div>
 
-      <a href="https://x.com/karpathy/status/1937902205765607626" target="_blank" rel="noopener" class="reading-card reveal reveal-delay-1">
-        <div class="reading-card-title">Andrej Karpathy on Context Engineering</div>
-        <div class="reading-card-desc">Co-founder of OpenAI endorsed "context engineering" over "prompt engineering" in June 2025 — "the delicate art and science of filling the context window with just the right information."</div>
-        <span class="reading-card-link">x.com →</span>
-      </a>
-
-      <a href="https://simonwillison.net/tags/context-engineering/" target="_blank" rel="noopener" class="reading-card reveal reveal-delay-2">
-        <div class="reading-card-title">Simon Willison — Context Engineering Patterns</div>
-        <div class="reading-card-desc">The most practical resource on working with context deliberately. Covers context quarantine, pruning, summarization, and offloading.</div>
-        <span class="reading-card-link">simonwillison.net →</span>
-      </a>
-
-      <a href="https://research.trychroma.com/context-rot" target="_blank" rel="noopener" class="reading-card reveal reveal-delay-3">
-        <div class="reading-card-title">Chroma Research — Context Rot (2025)</div>
-        <div class="reading-card-desc">Study showing LLM performance degrades continuously as context grows — even before the window fills up. The research behind "long chats = worse output."</div>
-        <span class="reading-card-link">research.trychroma.com →</span>
-      </a>
-
-      <a href="https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630/Lost-in-the-Middle-How-Language-Models-Use-Long" target="_blank" rel="noopener" class="reading-card reveal">
-        <div class="reading-card-title">Lost in the Middle — Stanford (TACL 2024)</div>
-        <div class="reading-card-desc">Demonstrated the U-shaped attention curve: AI pays most attention to the beginning and end of context, least to the middle.</div>
-        <span class="reading-card-link">direct.mit.edu →</span>
-      </a>
-
-      <a href="https://arxiv.org/pdf/2310.01714" target="_blank" rel="noopener" class="reading-card reveal">
-        <div class="reading-card-title">Analogical Prompting (ICLR 2024)</div>
-        <div class="reading-card-desc">LLMs self-generate relevant analogies before solving problems. The research behind why metaphors improve reasoning.</div>
-        <span class="reading-card-link">arxiv.org →</span>
-      </a>
-
-      <div class="reading-card reveal">
-        <div class="reading-card-title">Ethan Mollick — Co-Intelligence (2024)</div>
-        <div class="reading-card-desc">One of his four core principles: "Be the Human in the Loop." His "jagged frontier" concept explains why human judgment remains essential — AI capabilities are unevenly distributed across tasks.</div>
+    <!-- Excel Pivot Mock -->
+    <div class="xl-pivot reveal" style="margin-top: var(--space-lg);">
+      <div class="xl-toolbar">
+        <div class="xl-toolbar-left">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+          <span>Pivot Table — Ad Name</span>
+        </div>
+        <div class="xl-toolbar-right">
+          <span class="xl-formula">=SUMIFS(Spend, Ad_Name, "Podium — MX vs Xoom...")</span>
+        </div>
+      </div>
+      <div class="xl-header-row">
+        <div class="xl-col xl-col--name">Ad Name</div>
+        <div class="xl-col xl-col--metric">Spend</div>
+        <div class="xl-col xl-col--metric">Impr.</div>
+        <div class="xl-col xl-col--metric">Clicks</div>
+        <div class="xl-col xl-col--metric">CTR</div>
+        <div class="xl-col xl-col--metric">Installs</div>
+        <div class="xl-col xl-col--metric">CPI</div>
       </div>
 
+      <div class="xl-row xl-row--hero">
+        <div class="xl-col xl-col--name">
+          <div class="fb-thumb fb-thumb--hero xl-thumb"></div>
+          <strong>Podium — MX vs Xoom</strong>
+        </div>
+        <div class="xl-col xl-col--metric"><strong>$18,500</strong></div>
+        <div class="xl-col xl-col--metric"><strong>820,000</strong></div>
+        <div class="xl-col xl-col--metric"><strong>28,000</strong></div>
+        <div class="xl-col xl-col--metric"><strong class="xl-highlight">3.41%</strong></div>
+        <div class="xl-col xl-col--metric"><strong>4,200</strong></div>
+        <div class="xl-col xl-col--metric"><strong class="xl-highlight">$4.40</strong></div>
+      </div>
+
+      <div class="xl-row">
+        <div class="xl-col xl-col--name"><div class="fb-thumb fb-thumb--hero xl-thumb"></div>Podium — MX vs Remitly</div>
+        <div class="xl-col xl-col--metric">$22,000</div>
+        <div class="xl-col xl-col--metric">1,500,000</div>
+        <div class="xl-col xl-col--metric">35,000</div>
+        <div class="xl-col xl-col--metric">2.33%</div>
+        <div class="xl-col xl-col--metric">3,800</div>
+        <div class="xl-col xl-col--metric">$5.79</div>
+      </div>
+      <div class="xl-row">
+        <div class="xl-col xl-col--name"><div class="fb-thumb fb-thumb--podium-co xl-thumb"></div>Podium — CO vs Remitly</div>
+        <div class="xl-col xl-col--metric">$6,200</div>
+        <div class="xl-col xl-col--metric">310,000</div>
+        <div class="xl-col xl-col--metric">9,800</div>
+        <div class="xl-col xl-col--metric">3.16%</div>
+        <div class="xl-col xl-col--metric">1,450</div>
+        <div class="xl-col xl-col--metric">$4.28</div>
+      </div>
+      <div class="xl-row">
+        <div class="xl-col xl-col--name"><div class="fb-thumb xl-thumb"></div>Holiday Promo — Video ES</div>
+        <div class="xl-col xl-col--metric">$15,000</div>
+        <div class="xl-col xl-col--metric">980,000</div>
+        <div class="xl-col xl-col--metric">18,000</div>
+        <div class="xl-col xl-col--metric">1.84%</div>
+        <div class="xl-col xl-col--metric">1,500</div>
+        <div class="xl-col xl-col--metric">$10.00</div>
+      </div>
+      <div class="xl-row">
+        <div class="xl-col xl-col--name"><div class="fb-thumb xl-thumb"></div>Zero Fees — EN Static</div>
+        <div class="xl-col xl-col--metric">$4,200</div>
+        <div class="xl-col xl-col--metric">280,000</div>
+        <div class="xl-col xl-col--metric">3,800</div>
+        <div class="xl-col xl-col--metric">1.36%</div>
+        <div class="xl-col xl-col--metric">320</div>
+        <div class="xl-col xl-col--metric">$13.13</div>
+      </div>
+
+      <div class="xl-annotation">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 16v-4M12 8h.01"/></svg>
+        5 campaign rows &rarr; 1 creative. Hours of VLOOKUP. Already stale.
+      </div>
+    </div><!-- /xl-pivot -->
+  </div>
+</section>
+
+<!-- ===== SECTION 1.4 — THE PANGEA MARKETING SUITE ===== -->
+<section class="parallax-section section-pad-lg" id="suite">
+  <div class="parallax-bg" data-speed="0.25">
+    <div class="orb orb--cyan" style="width: 500px; height: 500px; bottom: -15%; left: -10%; opacity: 0.12;"></div>
+    <div class="orb orb--green" style="width: 250px; height: 250px; top: 5%; right: 10%; opacity: 0.08;"></div>
+  </div>
+
+  <div class="parallax-content container">
+    <div style="text-align: center;">
+      <span class="section-label section-label--cyan reveal">The Solution</span>
+      <h2 class="h1 section-title reveal reveal-delay-1">The creative layer Meta is missing.</h2>
+    </div>
+
+    <div class="narrative reveal reveal-delay-2" style="margin-top: var(--space-lg);">
+      <p>The Pangea Marketing Suite solves both problems:</p>
+    </div>
+
+    <div class="feature-list reveal" style="margin-top: var(--space-md);">
+      <div class="feature-item">
+        <div class="feature-number">1</div>
+        <div><strong>Pulls data from Facebook</strong> automatically — no more manual CSV exports.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-number">2</div>
+        <div><strong>Parses metadata</strong> — country, language, concept — extracted and structured from the file name.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-number">3</div>
+        <div><strong>Creates first-class objects</strong> that don't exist in Meta's model. "Creative" = same file. "Concept" = same idea, different files. Both sit alongside Campaigns, Ad Sets, and Ads.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-number">4</div>
+        <div><strong>Aggregation engine</strong> — combine any mix of objects for display and benchmarking. One concept across all countries? One click.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-number">5</div>
+        <div><strong>Built-in reporting</strong> — visual, fast, no Excel required.</div>
+      </div>
+    </div>
+
+    <div class="narrative reveal" style="margin-top: var(--space-md);">
+      <p>The key insight: the tool doesn't throw away Meta's reporting structure. It adds the <strong>creative layer on top</strong> that Meta is missing. You get both views — the media buying view and the creative view — in the same place.</p>
     </div>
 
     <div style="text-align: center; margin-top: var(--space-xl);">
-      <p class="body reveal" style="opacity: 0.3;">Jose Duarte · Pangea</p>
+      <h3 class="h2 section-title reveal">Every ad gets scored on efficiency and scale.</h3>
     </div>
+
+    <div class="narrative reveal" style="margin-top: var(--space-md);">
+      <p>Each metric is scored against a benchmark. The math is simple — but the insight it produces is powerful:</p>
+    </div>
+
+    <!-- Interactive Scoring Formula -->
+    <div class="scoring-demo reveal" style="margin-top: var(--space-lg);">
+      <div class="scoring-pair">
+
+        <!-- Cost Metric: CAC -->
+        <div class="scoring-card">
+          <div class="scoring-card-header scoring-card-header--cyan">
+            <div class="scoring-metric-name">CAC <span class="scoring-metric-type">Cost Metric</span></div>
+            <div class="scoring-formula-label">score = (benchmark / actual) &times; 100</div>
+          </div>
+          <div class="scoring-card-body">
+            <div class="scoring-row">
+              <span class="scoring-row-label">Actual CAC</span>
+              <span class="scoring-row-value" id="cacActualDisplay">$5.00</span>
+            </div>
+            <div class="scoring-row">
+              <span class="scoring-row-label">Benchmark CAC</span>
+              <span class="scoring-row-value scoring-row-value--editable" id="cacBenchDisplay">$10.00</span>
+            </div>
+            <div class="scoring-slider-wrap">
+              <input type="range" id="cacBenchSlider" class="scoring-slider" min="200" max="2000" value="1000" step="50">
+              <div class="scoring-slider-labels">
+                <span>$2</span>
+                <span>$20</span>
+              </div>
+            </div>
+            <div class="scoring-divider"></div>
+            <div class="scoring-result">
+              <div class="scoring-result-formula" id="cacFormula">($10.00 / $5.00) &times; 100</div>
+              <div class="scoring-result-score" id="cacScore">200</div>
+              <div class="scoring-result-label" id="cacLabel">2x better than benchmark</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rate Metric: CTR -->
+        <div class="scoring-card">
+          <div class="scoring-card-header scoring-card-header--coral">
+            <div class="scoring-metric-name">CTR <span class="scoring-metric-type">Rate Metric</span></div>
+            <div class="scoring-formula-label">score = (actual / benchmark) &times; 100</div>
+          </div>
+          <div class="scoring-card-body">
+            <div class="scoring-row">
+              <span class="scoring-row-label">Actual CTR</span>
+              <span class="scoring-row-value" id="ctrActualDisplay">3.41%</span>
+            </div>
+            <div class="scoring-row">
+              <span class="scoring-row-label">Benchmark CTR</span>
+              <span class="scoring-row-value scoring-row-value--editable" id="ctrBenchDisplay">2.00%</span>
+            </div>
+            <div class="scoring-slider-wrap">
+              <input type="range" id="ctrBenchSlider" class="scoring-slider" min="50" max="600" value="200" step="10">
+              <div class="scoring-slider-labels">
+                <span>0.5%</span>
+                <span>6.0%</span>
+              </div>
+            </div>
+            <div class="scoring-divider"></div>
+            <div class="scoring-result">
+              <div class="scoring-result-formula" id="ctrFormula">(3.41% / 2.00%) &times; 100</div>
+              <div class="scoring-result-score" id="ctrScore">171</div>
+              <div class="scoring-result-label" id="ctrLabel">1.7x better than benchmark</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="scoring-caption">100 = matches benchmark. Drag the benchmark to see how the same ad's score changes.</p>
+    </div>
+
+    <div class="narrative reveal" style="margin-top: var(--space-lg);">
+      <p>Each creative is scored across 12 metrics. Those scores combine into two composite dimensions — <strong>efficiency</strong> (how cheaply it converts) and <strong>scale</strong> (how much volume it drives). Plot them on two axes and every creative lands in a quadrant:</p>
+    </div>
+
+    <!-- Signal Map -->
+    <div class="sm-container reveal" style="margin-top: var(--space-md);" id="signalMap">
+      <div class="sm-chrome">
+        <div class="sm-chrome-left">
+          <div class="block-indicator block-indicator--cyan"></div>
+          <span class="sm-title">Signal Map</span>
+          <span class="sm-subtitle">15 Creatives</span>
+        </div>
+        <div class="sm-chrome-right">
+          Pangea Marketing Suite
+        </div>
+      </div>
+      <div class="sm-plot" id="smPlot">
+        <div class="sm-axis-y">Efficiency Score</div>
+        <div class="sm-axis-x">Scale Score</div>
+        <div class="sm-cross-h"></div>
+        <div class="sm-cross-v"></div>
+        <div class="sm-quad sm-quad--tl">Converter</div>
+        <div class="sm-quad sm-quad--tr">Star</div>
+        <div class="sm-quad sm-quad--bl">Red Flag</div>
+        <div class="sm-quad sm-quad--br">Scaler</div>
+
+        <!-- Hero squircle -->
+        <div class="sm-sq sm-sq--hero" style="left: 80%; bottom: 78%; --size: 36px;" data-label="Podium — MX vs Xoom">
+          <div class="sm-sq-ring"></div>
+        </div>
+
+        <!-- Podium — CO vs Remitly (bottom-right: high scale, low efficiency) -->
+        <div class="sm-sq sm-sq--podium-co" style="left: 82%; bottom: 25%; --size: 30px;" data-label="Podium — CO vs Remitly">
+          <div class="sm-sq-ring sm-sq-ring--coral"></div>
+        </div>
+
+        <!-- Other squircles -->
+        <div class="sm-sq sm-sq--star" style="left: 85%; bottom: 70%; --size: 20px;" data-label="Podium — MX vs Remitly"></div>
+        <div class="sm-sq sm-sq--converter" style="left: 28%; bottom: 78%; --size: 18px;" data-label="Referral $10 Bonus"></div>
+        <div class="sm-sq sm-sq--converter" style="left: 22%; bottom: 82%; --size: 14px;" data-label="Zero Fees — EN"></div>
+        <div class="sm-sq sm-sq--converter" style="left: 18%; bottom: 88%; --size: 12px;" data-label="Zero Fees — ES"></div>
+        <div class="sm-sq sm-sq--scaler" style="left: 72%; bottom: 38%; --size: 22px;" data-label="Holiday Promo — ES"></div>
+        <div class="sm-sq sm-sq--scaler" style="left: 68%; bottom: 32%; --size: 18px;" data-label="Holiday Promo — EN"></div>
+        <div class="sm-sq sm-sq--risk" style="left: 58%; bottom: 22%; --size: 20px;" data-label="Podium — GT vs WU"></div>
+        <div class="sm-sq sm-sq--core" style="left: 52%; bottom: 50%; --size: 20px;" data-label="Best Rate — MX"></div>
+        <div class="sm-sq sm-sq--core" style="left: 48%; bottom: 46%; --size: 16px;" data-label="App Install — MX"></div>
+        <div class="sm-sq sm-sq--core" style="left: 44%; bottom: 52%; --size: 14px;" data-label="App Install — CO"></div>
+        <div class="sm-sq sm-sq--underperf" style="left: 35%; bottom: 25%; --size: 14px;" data-label="Zero Fees — Old"></div>
+        <div class="sm-sq sm-sq--redflag" style="left: 48%; bottom: 15%; --size: 22px;" data-label="Legacy Install MX"></div>
+        <div class="sm-sq sm-sq--rising" style="left: 75%; bottom: 85%; --size: 10px;" data-label="Podium — MX vs WU"></div>
+      </div>
+
+      <!-- Callout cards — same concept, different performance -->
+      <div class="sm-card-pair">
+        <div class="sm-hero-card" id="smHeroCard">
+          <div class="sm-hero-card-thumb"></div>
+          <div class="sm-hero-card-info">
+            <div class="sm-hero-card-name">Podium — MX vs Xoom</div>
+            <div class="sm-hero-card-category"><span class="sm-badge sm-badge--star">Star</span></div>
+            <div class="sm-hero-card-metrics">
+              <span>Eff: <strong>132</strong></span>
+              <span>Scale: <strong>124</strong></span>
+              <span>CTR: <strong>3.41%</strong></span>
+              <span>CPI: <strong>$4.40</strong></span>
+            </div>
+          </div>
+        </div>
+        <div class="sm-hero-card sm-hero-card--co" id="smCoCard">
+          <div class="sm-hero-card-thumb sm-hero-card-thumb--co"></div>
+          <div class="sm-hero-card-info">
+            <div class="sm-hero-card-name">Podium — CO vs Remitly</div>
+            <div class="sm-hero-card-category"><span class="sm-badge sm-badge--risk">Scaler</span></div>
+            <div class="sm-hero-card-metrics">
+              <span>Eff: <strong>68</strong></span>
+              <span>Scale: <strong>118</strong></span>
+              <span>CTR: <strong>2.33%</strong></span>
+              <span>CPI: <strong>$7.20</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="sm-card-caption">Same concept. Mexico is a Star. Colombia needs work. Without the Suite, you'd never see this.</p>
+    </div><!-- /sm-container -->
+  </div>
+</section>
+
+<!-- ===== SECTION 1.5 — LIVE DEMO PLACEHOLDER ===== -->
+<section class="parallax-section section-pad-lg" id="demo" style="min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+  <div class="parallax-bg" data-speed="0.15">
+    <div class="orb orb--blue" style="width: 400px; height: 400px; top: -10%; right: -10%; opacity: 0.08;"></div>
+  </div>
+
+  <div class="parallax-content container" style="text-align: center;">
+    <span class="section-label section-label--green reveal">Live Demo</span>
+    <h2 class="h1 section-title reveal reveal-delay-1">Pangea Marketing Suite Live Demo</h2>
+  </div>
+</section>
+
+<!-- ===== SECTION 2.1 — THE STACK ===== -->
+<section class="parallax-section section-pad-lg" id="stack">
+  <div class="parallax-bg" data-speed="0.2">
+    <div class="orb orb--cyan" style="width: 500px; height: 500px; top: -15%; left: -10%; opacity: 0.1;"></div>
+    <div class="orb orb--coral" style="width: 300px; height: 300px; bottom: -10%; right: -5%; opacity: 0.06;"></div>
+    <div class="geo geo--ring" style="width: 180px; height: 180px; bottom: 15%; left: 10%; opacity: 0.03;"></div>
+  </div>
+
+  <div class="parallax-content container">
+    <div style="text-align: center;">
+      <span class="section-label section-label--cyan reveal">Tech Stack</span>
+      <h2 class="h1 section-title reveal reveal-delay-1">How I'm Building</h2>
+    </div>
+
+    <div class="narrative reveal reveal-delay-2" style="margin-top: var(--space-lg);">
+      <p>I started using Lovable in December, and through trial and error have landed on a <strong>Claude Code</strong> workflow that mostly follows a traditional software development process.</p>
+      <p>I have an idea of the whole thing I want to build in my head, and then I run these five steps for each major feature I want to add:</p>
+    </div>
+
+    <!-- Key Concepts Collapsible -->
+    <details class="key-concepts reveal" style="margin-top: var(--space-lg);" open>
+      <summary class="key-concepts-toggle">
+        <span class="section-label section-label--cyan" style="margin: 0;">The Tools</span>
+        <svg class="key-concepts-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+
+      <div class="kc-slideshow" id="kcSlideshow">
+        <div class="kc-slides">
+
+          <!-- Slide 1: Claude Code -->
+          <div class="kc-slide kc-slide--active" data-slide="0">
+            <div class="kc-slide-viz">
+              <div class="kc-terminal">
+                <div class="kc-terminal-bar">
+                  <span class="kc-dot kc-dot--red"></span>
+                  <span class="kc-dot kc-dot--gold"></span>
+                  <span class="kc-dot kc-dot--green"></span>
+                </div>
+                <div class="kc-terminal-body">
+                  <div class="kc-line"><span class="kc-prompt">$</span> claude</div>
+                  <div class="kc-line kc-line--dim"><span class="kc-cursor">▊</span> Reading project files...</div>
+                  <div class="kc-line kc-line--cyan">✓ 47 files indexed</div>
+                  <div class="kc-line kc-line--cyan">✓ Running tests...</div>
+                  <div class="kc-line kc-line--green">✓ All 12 tests passed</div>
+                </div>
+              </div>
+            </div>
+            <div class="kc-slide-text">
+              <h4 class="key-concepts-term">Claude Code</h4>
+              <p>An AI coding tool by Anthropic. It can see your actual project files, make changes directly, run tests, and fix its own mistakes. Think of it as an AI that sits at the developer's desk rather than answering questions from across the room.</p>
+            </div>
+          </div>
+
+          <!-- Slide 2: Context Window (the problem) -->
+          <div class="kc-slide" data-slide="1">
+            <div class="kc-slide-viz">
+              <div class="kc-ctx-window" id="kcCtxWindow">
+                <div class="kc-ctx-header">
+                  <span class="kc-ctx-header-label">Context Window</span>
+                  <span class="kc-ctx-header-pct" id="kcCtxPct">0%</span>
+                </div>
+                <div class="kc-ctx-body" id="kcCtxBody">
+                  <!-- Bubbles injected by animation -->
+                </div>
+                <div class="kc-ctx-meter">
+                  <div class="kc-ctx-meter-fill" id="kcCtxFill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="kc-slide-text">
+              <h4 class="key-concepts-term">Context Window</h4>
+              <p>The AI's working memory — a fixed-size container. Everything you say, everything it says, every file it reads fills it up. When it overflows, the AI forgets your earlier instructions. Long conversations = dumb AI.</p>
+            </div>
+          </div>
+
+          <!-- Slide 3: Agents (the solution) -->
+          <div class="kc-slide" data-slide="2">
+            <div class="kc-slide-viz">
+              <div class="kc-agents-demo">
+                <!-- User prompt -->
+                <div class="kc-agents-prompt">
+                  <div class="kc-agents-prompt-avatar">You</div>
+                  <div class="kc-agents-prompt-bubble">"Research the best way to do Meta Sync"</div>
+                </div>
+                <!-- Fan out line -->
+                <div class="kc-agents-fan">
+                  <svg class="kc-agents-fan-svg" viewBox="0 0 300 40" preserveAspectRatio="none">
+                    <path d="M150 0 L50 40" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+                    <path d="M150 0 L150 40" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+                    <path d="M150 0 L250 40" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+                  </svg>
+                </div>
+                <!-- Three parallel agents -->
+                <div class="kc-agents-row">
+                  <div class="kc-agent-card kc-agent-card--cyan">
+                    <div class="kc-agent-card-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <div class="kc-agent-card-role">UX/UI</div>
+                    <div class="kc-agent-card-task">Researching the sync flow &amp; user experience</div>
+                    <div class="kc-agent-card-status"><span class="kc-agent-spinner"></span> Working...</div>
+                  </div>
+                  <div class="kc-agent-card kc-agent-card--coral">
+                    <div class="kc-agent-card-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div class="kc-agent-card-role">Architect</div>
+                    <div class="kc-agent-card-task">Designing the data model &amp; code structure</div>
+                    <div class="kc-agent-card-status"><span class="kc-agent-spinner"></span> Working...</div>
+                  </div>
+                  <div class="kc-agent-card kc-agent-card--green">
+                    <div class="kc-agent-card-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+                    </div>
+                    <div class="kc-agent-card-role">Meta API Expert</div>
+                    <div class="kc-agent-card-task">Researching endpoints &amp; rate limits</div>
+                    <div class="kc-agent-card-status"><span class="kc-agent-spinner"></span> Working...</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="kc-slide-text">
+              <h4 class="key-concepts-term">Agents</h4>
+              <p>The solution to context window stuffing. Instead of one AI doing everything in one long conversation, you spin up separate agents — each with a fresh context window and a single job. One brainstorms. One writes code. One tests. Each stays sharp because it's only focused on one thing.</p>
+            </div>
+          </div>
+
+          <!-- Slide 4: Plugins -->
+          <div class="kc-slide" data-slide="3">
+            <div class="kc-slide-viz">
+              <div class="kc-plugins-demo">
+                <div class="kc-plugins-header">
+                  <span class="kc-plugins-header-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                  </span>
+                  <span class="kc-plugins-header-label">Installed Plugins</span>
+                </div>
+                <div class="kc-plugin-filters" id="kcPluginFilters">
+                  <label class="kc-filter-chip kc-filter-chip--api">
+                    <input type="checkbox" checked data-cat="api"> API
+                  </label>
+                  <label class="kc-filter-chip kc-filter-chip--design">
+                    <input type="checkbox" checked data-cat="design"> Design
+                  </label>
+                  <label class="kc-filter-chip kc-filter-chip--data">
+                    <input type="checkbox" checked data-cat="data"> Data
+                  </label>
+                  <label class="kc-filter-chip kc-filter-chip--testing">
+                    <input type="checkbox" checked data-cat="testing"> Testing
+                  </label>
+                  <label class="kc-filter-chip kc-filter-chip--devops">
+                    <input type="checkbox" data-cat="devops"> DevOps
+                  </label>
+                  <label class="kc-filter-chip kc-filter-chip--ai">
+                    <input type="checkbox" data-cat="ai"> AI/ML
+                  </label>
+                </div>
+                <div class="kc-plugin-row" id="kcPluginList">
+                  <div class="kc-plugin-item" data-cat="api">
+                    <div class="kc-plugin-item-dot kc-plugin-item-dot--green"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">Meta Ads Analyzer</div>
+                      <div class="kc-plugin-item-desc">Connects to Meta Marketing API — campaign analysis, pacing, creative fatigue</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--active">Active</div>
+                  </div>
+                  <div class="kc-plugin-item" data-cat="api">
+                    <div class="kc-plugin-item-dot kc-plugin-item-dot--green"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">API Scaffold</div>
+                      <div class="kc-plugin-item-desc">Endpoint creation with CRUD, authentication, and validation</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
+                  </div>
+                  <div class="kc-plugin-item" data-cat="design">
+                    <div class="kc-plugin-item-dot kc-plugin-item-dot--cyan"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">Frontend Design</div>
+                      <div class="kc-plugin-item-desc">Official Anthropic plugin — production-grade UIs, accessibility, motion</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--active">Active</div>
+                  </div>
+                  <div class="kc-plugin-item" data-cat="design">
+                    <div class="kc-plugin-item-dot kc-plugin-item-dot--cyan"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">Accessibility Audit</div>
+                      <div class="kc-plugin-item-desc">WCAG compliance checking — ARIA, keyboard navigation, focus management</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
+                  </div>
+                  <div class="kc-plugin-item" data-cat="data">
+                    <div class="kc-plugin-item-dot kc-plugin-item-dot--coral"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">Database Designer</div>
+                      <div class="kc-plugin-item-desc">Schema analysis, ERD generation, index optimization, migrations</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--active">Active</div>
+                  </div>
+                  <div class="kc-plugin-item" data-cat="data">
+                    <div class="kc-plugin-item-dot kc-plugin-item-dot--coral"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">Data Pipeline</div>
+                      <div class="kc-plugin-item-desc">ETL/ELT architecture design — sync scheduling, transformations</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
+                  </div>
+                  <div class="kc-plugin-item" data-cat="testing">
+                    <div class="kc-plugin-item-dot kc-plugin-item-dot--gold"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">Playwright</div>
+                      <div class="kc-plugin-item-desc">Browser automation — describe tests in plain English, Claude runs them</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--active">Active</div>
+                  </div>
+                  <div class="kc-plugin-item" data-cat="testing">
+                    <div class="kc-plugin-item-dot kc-plugin-item-dot--gold"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">TDD Cycle</div>
+                      <div class="kc-plugin-item-desc">Test-driven development — red/green/refactor orchestration</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
+                  </div>
+                  <div class="kc-plugin-item" data-cat="devops" style="display:none;">
+                    <div class="kc-plugin-item-dot" style="background:var(--gray);"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">Docker Compose</div>
+                      <div class="kc-plugin-item-desc">Container orchestration — generates and manages Docker configurations</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
+                  </div>
+                  <div class="kc-plugin-item" data-cat="devops" style="display:none;">
+                    <div class="kc-plugin-item-dot" style="background:var(--gray);"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">Security Scan</div>
+                      <div class="kc-plugin-item-desc">Vulnerability assessment — OWASP and CVE scanning</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
+                  </div>
+                  <div class="kc-plugin-item" data-cat="ai" style="display:none;">
+                    <div class="kc-plugin-item-dot" style="background:var(--gray);"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">Claude Ads</div>
+                      <div class="kc-plugin-item-desc">190 audit checks across Google, Meta, LinkedIn, TikTok ad platforms</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
+                  </div>
+                  <div class="kc-plugin-item" data-cat="ai" style="display:none;">
+                    <div class="kc-plugin-item-dot" style="background:var(--gray);"></div>
+                    <div class="kc-plugin-item-info">
+                      <div class="kc-plugin-item-name">Context7</div>
+                      <div class="kc-plugin-item-desc">Pulls live, version-specific API docs directly into Claude's context</div>
+                    </div>
+                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="kc-slide-text">
+              <h4 class="key-concepts-term">Plugins</h4>
+              <p>Agents need instructions — plugins are the playbook. Each plugin teaches Claude Code how to behave for a specific job. These are real, community-built plugins anyone can install. My pipeline uses custom ones (Cal, Lisa, Ralph Wiggum), but the ecosystem has hundreds.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Navigation -->
+        <div class="kc-nav">
+          <button class="kc-nav-btn kc-nav-prev" id="kcPrev" aria-label="Previous concept">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <div class="kc-dots" id="kcDots">
+            <button class="kc-dot-nav kc-dot-nav--active" data-goto="0"></button>
+            <button class="kc-dot-nav" data-goto="1"></button>
+            <button class="kc-dot-nav" data-goto="2"></button>
+            <button class="kc-dot-nav" data-goto="3"></button>
+          </div>
+          <button class="kc-nav-btn kc-nav-next" id="kcNext" aria-label="Next concept">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- Development Pipeline -->
+    <div style="text-align: center; margin-top: var(--space-xl);">
+      <span class="section-label section-label--coral reveal">The Process</span>
+    </div>
+    <div class="pipeline" style="margin-top: var(--space-lg);">
+
+      <!-- Step 1 — BRD Generation -->
+      <div class="pipeline-step reveal">
+        <div class="pipeline-marker">
+          <div class="pipeline-number">1</div>
+        </div>
+        <div class="pipeline-body card">
+          <h3 class="h3">BRD Generation</h3>
+          <div class="pipeline-subtitle">Tool: Cal</div>
+          <p class="pipeline-desc">
+            This is the brainstorm phase. I created a Claude plugin called Cal that has a number of skills — one of them holds a virtual "meeting." While in the meeting, Claude doesn't code. This lets me rant, zig, zag, and explore different areas safely. At the end, we use an agent to clean up the meeting minutes and produce a <span class="tooltip-term" data-tooltip="brd">BRD</span> that we take into the next step.
+          </p>
+          <a href="https://github.com/etoduarte/cal-plugin" class="pipeline-link" target="_blank" rel="noopener">github.com/etoduarte/cal-plugin</a>
+        </div>
+      </div>
+
+      <!-- Step 2 — User Stories -->
+      <div class="pipeline-step reveal">
+        <div class="pipeline-marker">
+          <div class="pipeline-number">2</div>
+        </div>
+        <div class="pipeline-body card">
+          <h3 class="h3">User Stories</h3>
+          <div class="pipeline-subtitle">Tool: Lisa</div>
+          <p class="pipeline-desc">
+            Lisa is a third-party plugin that takes the <span class="tooltip-term" data-tooltip="brd">BRD</span> and breaks it into <span class="tooltip-term" data-tooltip="user-stories">user stories</span> — development-ready specifications written from the user's perspective. It also asks you about any gaps or non-obvious issues that might pop up during implementation.
+          </p>
+          <a href="https://github.com/blencorp/lisa" class="pipeline-link" target="_blank" rel="noopener">github.com/blencorp/lisa</a>
+        </div>
+      </div>
+
+      <!-- Step 3 — Adversarial Review -->
+      <div class="pipeline-step reveal">
+        <div class="pipeline-marker">
+          <div class="pipeline-number">3</div>
+        </div>
+        <div class="pipeline-body card">
+          <h3 class="h3">Adversarial Review</h3>
+          <div class="pipeline-subtitle">Tool: Bart</div>
+          <p class="pipeline-desc">
+            Pressure-test the requirements before any code gets written. A dedicated <span class="tooltip-term" data-tooltip="adversarial-review">adversarial review</span> agent whose entire job is to <em>disagree</em> — find gaps, challenge assumptions, surface edge cases. This is a <span class="tooltip-term" data-tooltip="fence">fence</span>: nothing moves to implementation until it passes. I mediate the disagreements, deciding what matters and what doesn't.
+          </p>
+          <div class="pipeline-tips">
+            <strong>Tips:</strong> Ask the AI to "explain this to me as if I'm a marketer" (or whatever your role is). Ask it to explain the tradeoffs of each decision — not just what it recommends, but what you'd be giving up.
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 — Implementation -->
+      <div class="pipeline-step reveal">
+        <div class="pipeline-marker">
+          <div class="pipeline-number">4</div>
+        </div>
+        <div class="pipeline-body card">
+          <h3 class="h3">Implementation</h3>
+          <div class="pipeline-subtitle">Tool: Ralph Wiggum</div>
+          <p class="pipeline-desc">
+            The implementation phase — actually writing the code. Ralph Wiggum is a Claude Code plugin that <a href="https://x.com/joseduarte/status/1895289173869158721" class="pipeline-link" target="_blank" rel="noopener">went viral on X</a> for its unconventional approach: it uses a continuous loop where the AI writes code, runs tests, and iterates — all while working from the Bart-approved user stories. It builds features one at a time, and because it has clear specs from the previous steps, it stays focused instead of guessing.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 5 — QA & Code Protection -->
+      <div class="pipeline-step reveal">
+        <div class="pipeline-marker">
+          <div class="pipeline-number">5</div>
+        </div>
+        <div class="pipeline-body card">
+          <h3 class="h3">QA & Code Protection</h3>
+          <div class="pipeline-subtitle">Tool: Sacred Code Agent</div>
+          <p class="pipeline-desc">
+            Guard what's already working. Uses deliberately unusual <span class="tooltip-term" data-tooltip="shared-language">shared language</span> in code comments to mark protected areas. Standard comments like <code>// DO NOT MODIFY</code> get ignored by coding AIs — they've seen millions of them in training data. <span class="tooltip-term" data-tooltip="sacred-code">Sacred Code</span> uses dramatic, non-standard language that creates friction. The protection works <em>because</em> it's weird.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /pipeline -->
+  </div>
+</section>
+
+<!-- ============================================================
+     TRY IT — CLAUDE COWORK
+     ============================================================ -->
+<section class="parallax-section section-pad-lg" id="try-it">
+  <div class="parallax-bg" data-speed="0.2">
+    <div class="orb orb--cyan" style="width: 500px; height: 500px; top: -15%; right: -10%; opacity: 0.1;"></div>
+    <div class="orb orb--green" style="width: 300px; height: 300px; bottom: -10%; left: 5%; opacity: 0.06;"></div>
+  </div>
+
+  <div class="parallax-content container">
+    <div style="text-align: center;">
+      <span class="section-label section-label--green reveal">Try It Today</span>
+      <h2 class="h1 section-title reveal reveal-delay-1">You don't need Claude Code to start.</h2>
+      <p class="section-lead reveal reveal-delay-2" style="max-width: var(--width-narrow); margin: var(--space-md) auto 0;">Everything I showed uses Claude Code — a developer tool. But <strong>Claude Cowork</strong> brings the same idea to everyone. It's a mode inside the Claude desktop app that works directly on your files, plans multi-step tasks, and delivers real outputs — not just chat responses.</p>
+    </div>
+
+    <!-- Cowork Window Mock -->
+    <div class="cw-window reveal" style="margin-top: var(--space-xl);">
+      <!-- Title bar -->
+      <div class="cw-titlebar">
+        <div class="cw-dots">
+          <span class="kc-dot kc-dot--red"></span>
+          <span class="kc-dot kc-dot--gold"></span>
+          <span class="kc-dot kc-dot--green"></span>
+        </div>
+        <div class="cw-tabs">
+          <span class="cw-tab">Chat</span>
+          <span class="cw-tab cw-tab--active">Cowork</span>
+          <span class="cw-tab">Code</span>
+        </div>
+        <div class="cw-dots" style="visibility: hidden;"><span class="kc-dot"></span><span class="kc-dot"></span><span class="kc-dot"></span></div>
+      </div>
+
+      <!-- Main content area -->
+      <div class="cw-body">
+        <!-- Left: conversation + task -->
+        <div class="cw-main">
+          <!-- User prompt -->
+          <div class="cw-msg cw-msg--user">
+            <div class="cw-msg-label">You</div>
+            <div class="cw-msg-text">Analyze last quarter's campaign performance across all channels. Build a deck with the top 5 insights and recommendations for Q2.</div>
+            <div class="cw-msg-folder"><span class="cw-folder-icon">📁</span> ~/Pangea/Marketing/Q1 Reports</div>
+          </div>
+
+          <!-- Claude plan -->
+          <div class="cw-msg cw-msg--claude">
+            <div class="cw-msg-label">Claude</div>
+            <div class="cw-msg-text">I'll work through this in 4 steps:</div>
+            <div class="cw-plan">
+              <div class="cw-plan-step cw-plan-step--done">
+                <span class="cw-step-check">✓</span>
+                <span>Read all 12 CSV files in Q1 Reports</span>
+              </div>
+              <div class="cw-plan-step cw-plan-step--done">
+                <span class="cw-step-check">✓</span>
+                <span>Cross-reference spend vs. conversion by channel</span>
+              </div>
+              <div class="cw-plan-step cw-plan-step--active">
+                <span class="cw-step-spinner"></span>
+                <span>Building slide deck with top 5 insights</span>
+              </div>
+              <div class="cw-plan-step">
+                <span class="cw-step-circle"></span>
+                <span>Add Q2 recommendations based on trends</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: artifacts panel -->
+        <div class="cw-artifacts">
+          <div class="cw-artifacts-header">Artifacts</div>
+          <div class="cw-artifact-item cw-artifact-item--done">
+            <span class="cw-artifact-icon">📊</span>
+            <div>
+              <div class="cw-artifact-name">Q1_Analysis.xlsx</div>
+              <div class="cw-artifact-meta">Created · 48 KB</div>
+            </div>
+          </div>
+          <div class="cw-artifact-item cw-artifact-item--active">
+            <span class="cw-artifact-icon">📑</span>
+            <div>
+              <div class="cw-artifact-name">Q1_Insights_Deck.pptx</div>
+              <div class="cw-artifact-meta">Writing slides…</div>
+            </div>
+          </div>
+          <div class="cw-artifact-item">
+            <span class="cw-artifact-icon">📄</span>
+            <div>
+              <div class="cw-artifact-name">channel_summary.md</div>
+              <div class="cw-artifact-meta">Reference doc</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input bar -->
+      <div class="cw-input-bar">
+        <span class="cw-input-check">☑</span>
+        <span class="cw-input-folder">Work in ~/Pangea/Marketing/Q1 Reports</span>
+        <span class="cw-input-placeholder">Add context or redirect…</span>
+      </div>
+    </div>
+
+    <!-- What makes Cowork different -->
+    <h3 class="h3 reveal" style="text-align: center; margin-top: var(--space-xl); color: var(--white);">What makes this different from ChatGPT?</h3>
+
+    <div class="cowork-grid reveal" style="margin-top: var(--space-lg);">
+      <div class="cowork-card">
+        <div class="cowork-card-icon">📁</div>
+        <h3 class="cowork-card-title">It works on your actual files</h3>
+        <p class="cowork-card-desc">Point Cowork at a folder on your computer. It reads your spreadsheets, docs, and data directly — no copy-pasting into a chat window. It writes outputs back to that same folder.</p>
+      </div>
+      <div class="cowork-card">
+        <div class="cowork-card-icon">📑</div>
+        <h3 class="cowork-card-title">Real deliverables, not chat text</h3>
+        <p class="cowork-card-desc">Cowork creates actual .xlsx, .pptx, .pdf, and .docx files. Not "here's some text you can copy." You get a finished deck or spreadsheet you can open immediately.</p>
+      </div>
+      <div class="cowork-card">
+        <div class="cowork-card-icon">🔄</div>
+        <h3 class="cowork-card-title">It plans, then executes</h3>
+        <p class="cowork-card-desc">Describe the outcome you want. Cowork breaks it into steps, shows you the plan, and works through it. You can redirect mid-task or just let it run. Come back to finished work.</p>
+      </div>
+      <div class="cowork-card">
+        <div class="cowork-card-icon">⏰</div>
+        <h3 class="cowork-card-title">Schedule it to run on repeat</h3>
+        <p class="cowork-card-desc">Type <code>/schedule</code> to set any task on a cadence — daily, weekly, monthly. Monday morning competitor report? Weekly campaign summary? Set it once, it runs automatically.</p>
+      </div>
+    </div>
+
+    <!-- Quick tips -->
+    <h3 class="h3 reveal" style="text-align: center; margin-top: var(--space-xl); color: var(--white);">Quick tips that work in any Claude plan</h3>
+
+    <div class="cowork-tips reveal" style="margin-top: var(--space-lg);">
+      <div class="cowork-tip">
+        <strong>Show, don't describe.</strong> Paste 3-5 examples of what you want before asking Claude to create something new. More effective than any written instruction.
+      </div>
+      <div class="cowork-tip">
+        <strong>Data first, question last.</strong> Paste your doc <em>above</em> your question. This order alone improves results by up to 30%.
+      </div>
+      <div class="cowork-tip">
+        <strong>Make it critique itself.</strong> "Now review this from the perspective of a skeptical customer. What would make them ignore this? Fix it."
+      </div>
+    </div>
+
+
+    <p class="body reveal" style="opacity: 0.25; margin-top: var(--space-2xl); text-align: center;">Jose Duarte &middot; Pangea</p>
   </div>
 </section>
 
 <script src="script.js"></script>
+<script src="annotate.js"></script>
 </body>
 </html>
