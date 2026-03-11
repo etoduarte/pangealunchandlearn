@@ -40,15 +40,23 @@
     <p class="body hero-author reveal reveal-delay-4">Jose Duarte</p>
   </div>
 
-  <!-- Floating stickers -->
-  <div class="sticker" style="top: 15%; right: 8%; --rotate: 3deg;">
-    <span class="sticker-dot sticker-dot--green"></span> $500 sent to Maria
+  <!-- Floating ad -->
+  <div class="hero-float-ad" style="top: 50%; right: 12%; transform: translateY(-50%) rotate(2deg);">
+    <img src="images/podium-mexico.jpg" alt="Pangea vs Xoom price comparison ad for Mexico" loading="lazy">
   </div>
-  <div class="sticker" style="bottom: 25%; right: 12%; --rotate: -2deg; animation-delay: -1.5s;">
+
+  <!-- Floating stickers — clustered near the title -->
+  <div class="sticker" style="top: 28%; right: 22%; --rotate: -2deg;">
+    <span class="sticker-dot sticker-dot--green"></span> $5.00 CAC
+  </div>
+  <div class="sticker" style="top: 30%; left: 18%; --rotate: 2deg; animation-delay: -1s;">
     <span class="sticker-dot sticker-dot--cyan"></span> 3.2x ROAS
   </div>
-  <div class="sticker" style="top: 30%; right: 25%; --rotate: 1deg; animation-delay: -2.5s;">
+  <div class="sticker" style="bottom: 24%; left: 16%; --rotate: -1deg; animation-delay: -2s;">
     <span class="sticker-dot sticker-dot--gold"></span> Campaign optimized
+  </div>
+  <div class="sticker" style="bottom: 18%; right: 18%; --rotate: 1deg; animation-delay: -3s;">
+    <span class="sticker-dot sticker-dot--coral"></span> Creative fatigue detected
   </div>
 </section>
 
@@ -729,109 +737,39 @@
                   <label class="kc-filter-chip kc-filter-chip--testing">
                     <input type="checkbox" checked data-cat="testing"> Testing
                   </label>
-                  <label class="kc-filter-chip kc-filter-chip--devops">
-                    <input type="checkbox" data-cat="devops"> DevOps
-                  </label>
-                  <label class="kc-filter-chip kc-filter-chip--ai">
-                    <input type="checkbox" data-cat="ai"> AI/ML
-                  </label>
                 </div>
                 <div class="kc-plugin-row" id="kcPluginList">
                   <div class="kc-plugin-item" data-cat="api">
                     <div class="kc-plugin-item-dot kc-plugin-item-dot--green"></div>
                     <div class="kc-plugin-item-info">
                       <div class="kc-plugin-item-name">Meta Ads Analyzer</div>
-                      <div class="kc-plugin-item-desc">Connects to Meta Marketing API — campaign analysis, pacing, creative fatigue</div>
+                      <div class="kc-plugin-item-desc">Campaign analysis, pacing, creative fatigue via Meta API</div>
                     </div>
                     <div class="kc-plugin-item-badge kc-plugin-item-badge--active">Active</div>
-                  </div>
-                  <div class="kc-plugin-item" data-cat="api">
-                    <div class="kc-plugin-item-dot kc-plugin-item-dot--green"></div>
-                    <div class="kc-plugin-item-info">
-                      <div class="kc-plugin-item-name">API Scaffold</div>
-                      <div class="kc-plugin-item-desc">Endpoint creation with CRUD, authentication, and validation</div>
-                    </div>
-                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
                   </div>
                   <div class="kc-plugin-item" data-cat="design">
                     <div class="kc-plugin-item-dot kc-plugin-item-dot--cyan"></div>
                     <div class="kc-plugin-item-info">
                       <div class="kc-plugin-item-name">Frontend Design</div>
-                      <div class="kc-plugin-item-desc">Official Anthropic plugin — production-grade UIs, accessibility, motion</div>
+                      <div class="kc-plugin-item-desc">Production-grade UIs, accessibility, motion</div>
                     </div>
                     <div class="kc-plugin-item-badge kc-plugin-item-badge--active">Active</div>
-                  </div>
-                  <div class="kc-plugin-item" data-cat="design">
-                    <div class="kc-plugin-item-dot kc-plugin-item-dot--cyan"></div>
-                    <div class="kc-plugin-item-info">
-                      <div class="kc-plugin-item-name">Accessibility Audit</div>
-                      <div class="kc-plugin-item-desc">WCAG compliance checking — ARIA, keyboard navigation, focus management</div>
-                    </div>
-                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
                   </div>
                   <div class="kc-plugin-item" data-cat="data">
                     <div class="kc-plugin-item-dot kc-plugin-item-dot--coral"></div>
                     <div class="kc-plugin-item-info">
                       <div class="kc-plugin-item-name">Database Designer</div>
-                      <div class="kc-plugin-item-desc">Schema analysis, ERD generation, index optimization, migrations</div>
+                      <div class="kc-plugin-item-desc">Schema analysis, ERD generation, migrations</div>
                     </div>
                     <div class="kc-plugin-item-badge kc-plugin-item-badge--active">Active</div>
-                  </div>
-                  <div class="kc-plugin-item" data-cat="data">
-                    <div class="kc-plugin-item-dot kc-plugin-item-dot--coral"></div>
-                    <div class="kc-plugin-item-info">
-                      <div class="kc-plugin-item-name">Data Pipeline</div>
-                      <div class="kc-plugin-item-desc">ETL/ELT architecture design — sync scheduling, transformations</div>
-                    </div>
-                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
                   </div>
                   <div class="kc-plugin-item" data-cat="testing">
                     <div class="kc-plugin-item-dot kc-plugin-item-dot--gold"></div>
                     <div class="kc-plugin-item-info">
                       <div class="kc-plugin-item-name">Playwright</div>
-                      <div class="kc-plugin-item-desc">Browser automation — describe tests in plain English, Claude runs them</div>
+                      <div class="kc-plugin-item-desc">Browser test automation in plain English</div>
                     </div>
                     <div class="kc-plugin-item-badge kc-plugin-item-badge--active">Active</div>
-                  </div>
-                  <div class="kc-plugin-item" data-cat="testing">
-                    <div class="kc-plugin-item-dot kc-plugin-item-dot--gold"></div>
-                    <div class="kc-plugin-item-info">
-                      <div class="kc-plugin-item-name">TDD Cycle</div>
-                      <div class="kc-plugin-item-desc">Test-driven development — red/green/refactor orchestration</div>
-                    </div>
-                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
-                  </div>
-                  <div class="kc-plugin-item" data-cat="devops" style="display:none;">
-                    <div class="kc-plugin-item-dot" style="background:var(--gray);"></div>
-                    <div class="kc-plugin-item-info">
-                      <div class="kc-plugin-item-name">Docker Compose</div>
-                      <div class="kc-plugin-item-desc">Container orchestration — generates and manages Docker configurations</div>
-                    </div>
-                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
-                  </div>
-                  <div class="kc-plugin-item" data-cat="devops" style="display:none;">
-                    <div class="kc-plugin-item-dot" style="background:var(--gray);"></div>
-                    <div class="kc-plugin-item-info">
-                      <div class="kc-plugin-item-name">Security Scan</div>
-                      <div class="kc-plugin-item-desc">Vulnerability assessment — OWASP and CVE scanning</div>
-                    </div>
-                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
-                  </div>
-                  <div class="kc-plugin-item" data-cat="ai" style="display:none;">
-                    <div class="kc-plugin-item-dot" style="background:var(--gray);"></div>
-                    <div class="kc-plugin-item-info">
-                      <div class="kc-plugin-item-name">Claude Ads</div>
-                      <div class="kc-plugin-item-desc">190 audit checks across Google, Meta, LinkedIn, TikTok ad platforms</div>
-                    </div>
-                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
-                  </div>
-                  <div class="kc-plugin-item" data-cat="ai" style="display:none;">
-                    <div class="kc-plugin-item-dot" style="background:var(--gray);"></div>
-                    <div class="kc-plugin-item-info">
-                      <div class="kc-plugin-item-name">Context7</div>
-                      <div class="kc-plugin-item-desc">Pulls live, version-specific API docs directly into Claude's context</div>
-                    </div>
-                    <div class="kc-plugin-item-badge kc-plugin-item-badge--idle">Available</div>
                   </div>
                 </div>
               </div>
@@ -925,7 +863,7 @@
           <h3 class="h3">Implementation</h3>
           <div class="pipeline-subtitle">Tool: Ralph Wiggum</div>
           <p class="pipeline-desc">
-            The implementation phase — actually writing the code. Ralph Wiggum is a Claude Code plugin that <a href="https://x.com/joseduarte/status/1895289173869158721" class="pipeline-link" target="_blank" rel="noopener">went viral on X</a> for its unconventional approach: it uses a continuous loop where the AI writes code, runs tests, and iterates — all while working from the Bart-approved user stories. It builds features one at a time, and because it has clear specs from the previous steps, it stays focused instead of guessing.
+            The implementation phase — actually writing the code. Ralph Wiggum is a Claude Code plugin that went viral on X for its unconventional approach: it uses a continuous loop where the AI writes code, runs tests, and iterates — all while working from the Bart-approved user stories. It builds features one at a time, and because it has clear specs from the previous steps, it stays focused instead of guessing.
           </p>
         </div>
       </div>
@@ -955,6 +893,17 @@
   <div class="parallax-bg" data-speed="0.2">
     <div class="orb orb--cyan" style="width: 500px; height: 500px; top: -15%; right: -10%; opacity: 0.1;"></div>
     <div class="orb orb--green" style="width: 300px; height: 300px; bottom: -10%; left: 5%; opacity: 0.06;"></div>
+  </div>
+
+  <!-- Floating stickers -->
+  <div class="sticker" style="top: 12%; right: 6%; --rotate: 2deg;">
+    <span class="sticker-dot sticker-dot--green"></span> Deck exported to ~/Reports
+  </div>
+  <div class="sticker" style="top: 28%; left: 4%; --rotate: -3deg; animation-delay: -1.5s;">
+    <span class="sticker-dot sticker-dot--cyan"></span> 12 files analyzed
+  </div>
+  <div class="sticker" style="bottom: 18%; right: 10%; --rotate: 1deg; animation-delay: -2.5s;">
+    <span class="sticker-dot sticker-dot--gold"></span> Weekly report scheduled
   </div>
 
   <div class="parallax-content container">

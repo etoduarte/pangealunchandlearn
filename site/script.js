@@ -419,14 +419,32 @@
       clearInterval(ctxTimer);
     }
 
+    var slidesContainer = document.querySelector('.kc-slides');
+
     function goToSlide(index) {
       if (index < 0) index = slides.length - 1;
       if (index >= slides.length) index = 0;
+
+      // Lock current height before swap
+      var startHeight = slidesContainer.offsetHeight;
+      slidesContainer.style.height = startHeight + 'px';
+
       slides[current].classList.remove('kc-slide--active');
       dots[current].classList.remove('kc-dot-nav--active');
       current = index;
       slides[current].classList.add('kc-slide--active');
       dots[current].classList.add('kc-dot-nav--active');
+
+      // Measure new height and animate
+      var endHeight = slidesContainer.scrollHeight;
+      requestAnimationFrame(function () {
+        slidesContainer.style.height = endHeight + 'px';
+      });
+      // Clear fixed height after transition
+      slidesContainer.addEventListener('transitionend', function handler() {
+        slidesContainer.style.height = '';
+        slidesContainer.removeEventListener('transitionend', handler);
+      });
 
       // Trigger context window animation on slide 1
       if (current === 1) {
