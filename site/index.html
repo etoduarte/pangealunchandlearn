@@ -9,6 +9,75 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Password Gate -->
+  <div id="passwordGate" style="
+    position: fixed; inset: 0; z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(180deg, #002B49 0%, #0A1E3D 100%);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  ">
+    <div style="
+      text-align: center; padding: 48px; max-width: 400px; width: 90%;
+      background: rgba(255,255,255,0.05); border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+    ">
+      <div style="font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 8px;">
+        <span style="color: #00D4FF;">&psi;</span> pangea
+      </div>
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 32px;">
+        Enter the password to view this page.
+      </p>
+      <form id="passwordForm" onsubmit="return checkPassword(event)">
+        <input
+          id="passwordInput"
+          type="password"
+          placeholder="Password"
+          autocomplete="off"
+          style="
+            width: 100%; box-sizing: border-box; padding: 14px 20px;
+            border-radius: 12px; border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.08); color: #fff;
+            font-size: 16px; font-family: inherit; outline: none;
+            transition: border-color 0.2s;
+          "
+          onfocus="this.style.borderColor='#00D4FF'"
+          onblur="this.style.borderColor='rgba(255,255,255,0.15)'"
+        >
+        <p id="passwordError" style="
+          color: #FF6B5C; font-size: 13px; margin: 12px 0 0;
+          display: none;
+        ">Incorrect password. Try again.</p>
+        <button type="submit" style="
+          margin-top: 20px; width: 100%; padding: 14px;
+          background: linear-gradient(135deg, #00D4FF, #0099E5); color: #fff;
+          font-size: 16px; font-weight: 600; font-family: inherit;
+          border: none; border-radius: 12px; cursor: pointer;
+          transition: opacity 0.2s;
+        " onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+          Enter
+        </button>
+      </form>
+    </div>
+  </div>
+  <script>
+    function checkPassword(e) {
+      e.preventDefault();
+      var input = document.getElementById('passwordInput');
+      if (input.value === 'Pangea2026') {
+        document.getElementById('passwordGate').style.display = 'none';
+        sessionStorage.setItem('pangea_auth', '1');
+      } else {
+        document.getElementById('passwordError').style.display = 'block';
+        input.value = '';
+        input.focus();
+      }
+      return false;
+    }
+    if (sessionStorage.getItem('pangea_auth') === '1') {
+      document.getElementById('passwordGate').style.display = 'none';
+    }
+  </script>
 
 <!-- Scroll Progress Bar -->
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -1027,19 +1096,108 @@
       </div>
     </div>
 
-    <!-- Quick tips -->
-    <h3 class="h3 reveal" style="text-align: center; margin-top: var(--space-xl); color: var(--white);">Quick tips that work in any Claude plan</h3>
+    <!-- Real prompt example -->
+    <h3 class="h3 reveal" style="text-align: center; margin-top: var(--space-xl); color: var(--white);">See it in action: a real prompt &amp; real output</h3>
 
-    <div class="cowork-tips reveal" style="margin-top: var(--space-lg);">
-      <div class="cowork-tip">
-        <strong>Show, don't describe.</strong> Paste 3-5 examples of what you want before asking Claude to create something new. More effective than any written instruction.
+    <div class="prompt-showcase reveal" style="margin-top: var(--space-lg); max-width: 800px; margin-left: auto; margin-right: auto;">
+      <div style="background: rgba(0,0,0,0.35); border-radius: 16px; padding: var(--space-lg); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(12px);">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--space-md);">
+          <span style="background: var(--cyan); color: var(--navy); font-weight: 700; font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;">Prompt</span>
+          <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">Given to Claude with daily &amp; monthly ad breakdowns + brand guide</span>
+        </div>
+        <div style="color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; font-family: 'Inter', sans-serif;">
+          <p style="margin-bottom: 12px;"><em>"Can you prepare a monthly report for our Meta ads for February? I have provided you with daily breakdown by ad for February and January, monthly breakdown by campaign for February and January, and brand colors and typography for reference.</em></p>
+          <p style="margin-bottom: 12px;"><em>Use the monthly breakdown files as a checksum to make sure your daily breakdown transformations didn't miss anything. Your focus should be providing a comprehensive, insightful report that leads to meaningful insights that drive action."</em></p>
+          <ul style="list-style: none; padding: 0; margin: 0 0 12px 0;">
+            <li style="padding: 4px 0; color: rgba(255,255,255,0.7);">&#x2022; What is the funnel health between months?</li>
+            <li style="padding: 4px 0; color: rgba(255,255,255,0.7);">&#x2022; Any major changes in costs / per or %ge rate metrics?</li>
+            <li style="padding: 4px 0; color: rgba(255,255,255,0.7);">&#x2022; What was CAC (Trials Started) for each week?</li>
+            <li style="padding: 4px 0; color: rgba(255,255,255,0.7);">&#x2022; Daily / weekly / monthly trends?</li>
+            <li style="padding: 4px 0; color: rgba(255,255,255,0.7);">&#x2022; Creative review (inferred from naming conventions)</li>
+          </ul>
+        </div>
       </div>
-      <div class="cowork-tip">
-        <strong>Data first, question last.</strong> Paste your doc <em>above</em> your question. This order alone improves results by up to 30%.
+
+      <!-- Input files -->
+      <div style="background: rgba(0,0,0,0.35); border-radius: 16px; padding: var(--space-lg); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(12px); margin-top: var(--space-md);">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--space-md);">
+          <span style="background: rgba(255,255,255,0.12); color: var(--white); font-weight: 700; font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;">Inputs</span>
+          <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">Files in the project folder</span>
+        </div>
+        <div class="input-files-list">
+          <div class="input-file">
+            <span class="input-file-icon input-file-icon--csv">csv</span>
+            <span class="input-file-name">February Ad Daily Detail.csv</span>
+            <span class="input-file-desc">Daily performance data by ad</span>
+          </div>
+          <div class="input-file">
+            <span class="input-file-icon input-file-icon--csv">csv</span>
+            <span class="input-file-name">January Ad Daily Detail.csv</span>
+            <span class="input-file-desc">Daily performance data by ad</span>
+          </div>
+          <div class="input-file">
+            <span class="input-file-icon input-file-icon--csv">csv</span>
+            <span class="input-file-name">February Campaign Totals.csv</span>
+            <span class="input-file-desc">Monthly totals as checksum</span>
+          </div>
+          <div class="input-file">
+            <span class="input-file-icon input-file-icon--csv">csv</span>
+            <span class="input-file-name">January Campaign Totals.csv</span>
+            <span class="input-file-desc">Monthly totals as checksum</span>
+          </div>
+          <div class="input-file input-file--autodiscovered">
+            <span class="input-file-icon input-file-icon--folder">&#x1F4C1;</span>
+            <span class="input-file-name">guide_brand_colors</span>
+            <span class="input-file-desc">Auto-discovered by Claude</span>
+          </div>
+          <div class="input-file input-file--autodiscovered">
+            <span class="input-file-icon input-file-icon--folder">&#x1F4C1;</span>
+            <span class="input-file-name">guide_typography</span>
+            <span class="input-file-desc">Auto-discovered by Claude</span>
+          </div>
+          <div class="input-file input-file--autodiscovered">
+            <span class="input-file-icon input-file-icon--img">png</span>
+            <span class="input-file-name">pangea marketing suite logo.png</span>
+            <span class="input-file-desc">Auto-discovered by Claude</span>
+          </div>
+        </div>
+        <p style="color: var(--cyan); font-size: 0.8rem; margin-top: var(--space-sm); margin-bottom: 0; opacity: 0.8;">&#x2728; We only referenced the CSVs and brand guide in the prompt. Claude scanned the folder on its own and used the typography, colors, and logo in the final report.</p>
       </div>
-      <div class="cowork-tip">
-        <strong>Make it critique itself.</strong> "Now review this from the perspective of a skeptical customer. What would make them ignore this? Fix it."
+
+      <div style="text-align: center; margin: var(--space-lg) 0;">
+        <svg width="24" height="40" viewBox="0 0 24 40" fill="none" style="opacity: 0.4;">
+          <path d="M12 0v32m0 0l-8-8m8 8l8-8" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
+
+      <a href="Pangea_Meta_Ads_Report_Feb2026_V1.pptx" download class="prompt-output-card" style="display: block; background: linear-gradient(135deg, rgba(0,210,211,0.15), rgba(0,210,211,0.05)); border-radius: 16px; padding: var(--space-lg); border: 1px solid rgba(0,210,211,0.3); text-decoration: none; transition: transform 0.2s ease, border-color 0.3s ease; cursor: pointer;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="background: var(--cyan); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div style="color: var(--white); font-weight: 700; font-size: 1.05rem;">Download the output</div>
+            <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 2px;">Pangea Meta Ads Report — Feb 2026 (.pptx) &middot; Generated by Claude in ~2 minutes</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Try it yourself -->
+      <a href="demo-inputs.zip" download class="prompt-output-card" style="display: block; background: rgba(255,255,255,0.04); border-radius: 16px; padding: 16px var(--space-lg); border: 1px solid rgba(255,255,255,0.08); text-decoration: none; transition: transform 0.2s ease, border-color 0.3s ease; cursor: pointer; margin-top: 10px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="background: rgba(255,255,255,0.1); border-radius: 12px; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div style="color: rgba(255,255,255,0.8); font-weight: 600; font-size: 0.92rem;">Try it yourself &mdash; download the input files</div>
+            <div style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-top: 2px;">CSVs, brand guide, typography &amp; logo (.zip) &middot; Drop into a Claude project and use the prompt above</div>
+          </div>
+        </div>
+      </a>
     </div>
 
 
