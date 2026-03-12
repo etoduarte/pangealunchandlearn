@@ -871,6 +871,76 @@
   </style>
 </head>
 <body>
+  <!-- Password Gate -->
+  <div id="passwordGate" style="
+    position: fixed; inset: 0; z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--gradient-dark);
+    font-family: var(--font);
+  ">
+    <div style="
+      text-align: center; padding: 48px; max-width: 400px; width: 90%;
+      background: rgba(255,255,255,0.05); border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+    ">
+      <div style="font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 8px;">
+        <span style="color: var(--cyan);">&psi;</span> pangea
+      </div>
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 32px;">
+        Enter the password to view this page.
+      </p>
+      <form id="passwordForm" onsubmit="return checkPassword(event)">
+        <input
+          id="passwordInput"
+          type="password"
+          placeholder="Password"
+          autocomplete="off"
+          style="
+            width: 100%; box-sizing: border-box; padding: 14px 20px;
+            border-radius: 12px; border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.08); color: var(--white);
+            font-size: 16px; font-family: var(--font); outline: none;
+            transition: border-color 0.2s;
+          "
+          onfocus="this.style.borderColor='var(--cyan)'"
+          onblur="this.style.borderColor='rgba(255,255,255,0.15)'"
+        >
+        <p id="passwordError" style="
+          color: var(--coral); font-size: 13px; margin: 12px 0 0;
+          display: none;
+        ">Incorrect password. Try again.</p>
+        <button type="submit" style="
+          margin-top: 20px; width: 100%; padding: 14px;
+          background: var(--gradient-button); color: var(--white);
+          font-size: 16px; font-weight: 600; font-family: var(--font);
+          border: none; border-radius: 12px; cursor: pointer;
+          transition: opacity 0.2s;
+        " onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+          Enter
+        </button>
+      </form>
+    </div>
+  </div>
+  <script>
+    function checkPassword(e) {
+      e.preventDefault();
+      var input = document.getElementById('passwordInput');
+      if (input.value === 'Pangea2026') {
+        document.getElementById('passwordGate').style.display = 'none';
+        sessionStorage.setItem('pangea_auth', '1');
+      } else {
+        document.getElementById('passwordError').style.display = 'block';
+        input.value = '';
+        input.focus();
+      }
+      return false;
+    }
+    // Skip gate if already authenticated this session
+    if (sessionStorage.getItem('pangea_auth') === '1') {
+      document.getElementById('passwordGate').style.display = 'none';
+    }
+  </script>
 
   <!-- Back to Presentation -->
   <div class="back-bar">
